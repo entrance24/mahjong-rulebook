@@ -1,36 +1,1734 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>清一色ゲーム（三人麻雀）</title>
-</head>
+<section id="rules-part1">
 
-<body>
+  <style>
+    /* ===== 基本レイアウト ===== */
+    #rules-part1 {
+      --main: #263238;
+      --sub: #546e7a;
+      --accent: #1565c0;
+      --accent-light: #e3f2fd;
+      --green: #2e7d32;
+      --green-light: #e8f5e9;
+      --orange: #ef6c00;
+      --orange-light: #fff3e0;
+      --red: #c62828;
+      --red-light: #ffebee;
+      --purple: #6a1b9a;
+      --purple-light: #f3e5f5;
+      --border: #cfd8dc;
+      --bg: #f5f7f9;
+      --white: #ffffff;
 
-  <h1>清一色ゲーム（三人麻雀）</h1>
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      color: var(--main);
+      line-height: 1.7;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+      box-sizing: border-box;
+    }
 
-  <p>
-    特殊麻雀「清一色ゲーム（三人麻雀）」のルールブックです。
-  </p>
+    #rules-part1 *,
+    #rules-part1 *::before,
+    #rules-part1 *::after {
+      box-sizing: border-box;
+    }
 
-  <h2>ルールブック</h2>
+    #rules-part1 h1 {
+      margin: 0 0 10px;
+      padding: 18px 20px;
+      color: #fff;
+      background: linear-gradient(135deg, #263238, #455a64);
+      border-radius: 12px;
+      font-size: 2rem;
+      line-height: 1.3;
+    }
 
-  <ul>
-    <li>
-      <a href="清一色ゲーム（三人麻雀）.html">
-        清一色ゲーム（三人麻雀） ルールブックを開く
-      </a>
-    </li>
-  </ul>
+    #rules-part1 h2 {
+      margin: 36px 0 16px;
+      padding: 10px 14px;
+      border-left: 6px solid var(--accent);
+      background: var(--accent-light);
+      border-radius: 6px;
+      font-size: 1.45rem;
+    }
+
+    #rules-part1 h3 {
+      margin: 24px 0 12px;
+      color: #37474f;
+      font-size: 1.15rem;
+    }
+
+    #rules-part1 p {
+      margin: 10px 0;
+    }
+
+    #rules-part1 ul,
+    #rules-part1 ol {
+      margin: 10px 0 16px;
+      padding-left: 1.8em;
+    }
+
+    #rules-part1 li {
+      margin: 5px 0;
+    }
+
+    #rules-part1 hr {
+      border: 0;
+      border-top: 2px solid #eceff1;
+      margin: 35px 0;
+    }
+
+    /* ===== 説明ボックス ===== */
+    #rules-part1 .intro {
+      margin: 16px 0 24px;
+      padding: 16px 18px;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    #rules-part1 .notice {
+      margin: 16px 0;
+      padding: 14px 16px;
+      border-left: 5px solid var(--orange);
+      background: var(--orange-light);
+      border-radius: 6px;
+    }
+
+    #rules-part1 .important {
+      margin: 16px 0;
+      padding: 14px 16px;
+      border-left: 5px solid var(--red);
+      background: var(--red-light);
+      border-radius: 6px;
+    }
+
+    #rules-part1 .special {
+      margin: 16px 0;
+      padding: 14px 16px;
+      border-left: 5px solid var(--purple);
+      background: var(--purple-light);
+      border-radius: 6px;
+    }
+
+    /* ===== テーブル ===== */
+    #rules-part1 .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 14px 0 24px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: #fff;
+    }
+
+    #rules-part1 table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+      background: #fff;
+    }
+
+    #rules-part1 th,
+    #rules-part1 td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    #rules-part1 th {
+      background: #455a64;
+      color: #fff;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #rules-part1 tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    #rules-part1 tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ===== 牌種カード ===== */
+    #rules-part1 .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 14px 0 24px;
+    }
+
+    #rules-part1 .tile-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    #rules-part1 .tile-card-title {
+      padding: 10px 14px;
+      background: #37474f;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    #rules-part1 .tile-card-body {
+      padding: 12px 14px;
+    }
+
+    /* ===== 数字・強調 ===== */
+    #rules-part1 .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #eceff1;
+      color: #37474f;
+      font-size: 0.85em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #rules-part1 .badge-blue {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    #rules-part1 .badge-red {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    #rules-part1 .badge-gold {
+      background: #fff8e1;
+      color: #8d6e00;
+    }
+
+    #rules-part1 .badge-green {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    /* ===== ステップ表示 ===== */
+    #rules-part1 .steps {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 20px;
+    }
+
+    #rules-part1 .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    #rules-part1 .step-number {
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ===== スマホ対応 ===== */
+    @media (max-width: 700px) {
+      #rules-part1 {
+        padding: 12px;
+      }
+
+      #rules-part1 h1 {
+        font-size: 1.5rem;
+        padding: 15px;
+      }
+
+      #rules-part1 h2 {
+        font-size: 1.25rem;
+      }
+
+      #rules-part1 .tile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #rules-part1 th,
+      #rules-part1 td {
+        padding: 8px 9px;
+        font-size: 0.92rem;
+      }
+    }
+  </style>
+
+  <!-- ==================== タイトル ==================== -->
+
+  <h1>清一色ゲーム（三人麻雀） ルールブック</h1>
+
+  <div class="intro">
+    <p>
+      本ルールブックは、本特殊麻雀における
+      <strong>牌構成・基本ルール・チョンボ・ポイント・グランドクロス・抜き牌・焼き鳥・カン</strong>
+      について定めたものです。
+    </p>
+  </div>
 
   <hr>
 
-  <p>
-    <a href="../../index.html">
-      ← 特殊麻雀ルールブック一覧に戻る
-    </a>
-  </p>
+  <!-- ==================== 1. 牌構成 ==================== -->
 
-</body>
-</html>
+  <h2>1. 牌構成</h2>
+
+  <h3>1-1. 共通</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>牌</th>
+          <th>枚数</th>
+          <th>特殊ルール</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>風牌・三元牌</td>
+          <td><strong>28枚</strong></td>
+          <td>東・南・西・北・白・發・中を各4枚</td>
+        </tr>
+        <tr>
+          <td>一萬・九萬</td>
+          <td><strong>8枚</strong></td>
+          <td>各4枚。抜き牌として使用</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="special">
+    <strong>🎴 背面色について</strong>
+    <ul>
+      <li>2セットの麻雀牌を使用するため、牌の背面色は<strong>青と黄が混在</strong>する。</li>
+      <li>和了時に牌の背面色がすべて同じ状態であれば、<strong>背一色</strong>が成立する。</li>
+    </ul>
+  </div>
+
+  <h3>1-2. 筒子場</h3>
+
+  <div class="tile-grid">
+    <div class="tile-card">
+      <div class="tile-card-title">通常筒子</div>
+      <div class="tile-card-body">
+        1p～9p<br>
+        <strong>各8枚 / 計72枚</strong>
+      </div>
+    </div>
+
+    <div class="tile-card">
+      <div class="tile-card-title">赤5p</div>
+      <div class="tile-card-body">
+        <strong>6枚</strong><br>
+        <span class="badge badge-red">ドラ1</span>
+      </div>
+    </div>
+
+    <div class="tile-card">
+      <div class="tile-card-title">金5p</div>
+      <div class="tile-card-body">
+        <strong>2枚</strong><br>
+        <span class="badge badge-gold">ドラ2</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>1-3. 索子場</h3>
+
+  <div class="tile-grid">
+    <div class="tile-card">
+      <div class="tile-card-title">通常索子</div>
+      <div class="tile-card-body">
+        1s～9s<br>
+        <strong>各8枚 / 計72枚</strong>
+      </div>
+    </div>
+
+    <div class="tile-card">
+      <div class="tile-card-title">赤5s</div>
+      <div class="tile-card-body">
+        <strong>4枚</strong><br>
+        <span class="badge badge-red">ドラ1</span>
+      </div>
+    </div>
+
+    <div class="tile-card">
+      <div class="tile-card-title">金5s</div>
+      <div class="tile-card-body">
+        <strong>2枚</strong><br>
+        <span class="badge badge-gold">ドラ2</span>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ==================== 2. 基本ルール ==================== -->
+
+  <h2>2. 基本ルール</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>ルール</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>場</td>
+          <td><strong>筒子場と索子場を交互</strong>に行う</td>
+        </tr>
+        <tr>
+          <td>人数</td>
+          <td>三人麻雀</td>
+        </tr>
+        <tr>
+          <td>持ち点</td>
+          <td>50,000点持ち・50,000点返し</td>
+        </tr>
+        <tr>
+          <td>ツモ</td>
+          <td>ツモ損あり</td>
+        </tr>
+        <tr>
+          <td>喰いタン</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>後付け</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>0点</td>
+          <td>0点継続</td>
+        </tr>
+        <tr>
+          <td>立直</td>
+          <td>通常の立直不可</td>
+        </tr>
+        <tr>
+          <td>本場</td>
+          <td>なし</td>
+        </tr>
+        <tr>
+          <td>焼き鳥</td>
+          <td><strong>2枚</strong>あり</td>
+        </tr>
+        <tr>
+          <td>役満祝儀</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>九種九牌</td>
+          <td>あり。成立時は<strong>親継続</strong></td>
+        </tr>
+        <tr>
+          <td>四槓子散了</td>
+          <td>なし。牌山が残る限りカン無制限</td>
+        </tr>
+        <tr>
+          <td>カンドラ</td>
+          <td>暗カン・明カンともに<strong>即乗り</strong></td>
+        </tr>
+        <tr>
+          <td>明カン</td>
+          <td>責任払いあり</td>
+        </tr>
+        <tr>
+          <td>国士無双</td>
+          <td>暗カンロンあり</td>
+        </tr>
+        <tr>
+          <td>パオ</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>ドラ表示牌</td>
+          <td>表示牌の隣までツモりきる</td>
+        </tr>
+        <tr>
+          <td>フリテン立直</td>
+          <td>あり</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="important">
+    <strong>⚠️ 特殊ルール</strong>
+    <p>
+      リーチ後の一発で<strong>白をツモった場合は、強制的に高めで和了</strong>する。
+    </p>
+  </div>
+
+  <h3>2-1. パオ対象役</h3>
+
+  <div class="tile-grid">
+    <div class="tile-card">
+      <div class="tile-card-title">大三元</div>
+      <div class="tile-card-body">パオ対象</div>
+    </div>
+
+    <div class="tile-card">
+      <div class="tile-card-title">四槓子</div>
+      <div class="tile-card-body">パオ対象</div>
+    </div>
+
+    <div class="tile-card">
+      <div class="tile-card-title">大四喜</div>
+      <div class="tile-card-body">パオ対象</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ==================== 3. チョンボ ==================== -->
+
+  <h2>3. チョンボ</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ケース</th>
+          <th>処理</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>通常のチョンボ</td>
+          <td><strong>フリテン扱い</strong></td>
+        </tr>
+        <tr>
+          <td>リーチ後に待ちが変わる暗カン</td>
+          <td><strong>チョンボ + フリテン扱い</strong></td>
+        </tr>
+        <tr>
+          <td>誤ロン・誤ツモによる手牌晒し</td>
+          <td>その局中は<strong>オープン扱い</strong></td>
+        </tr>
+        <tr>
+          <td>その他</td>
+          <td>当事者同士で決定</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- ==================== 4. ポイント ==================== -->
+
+  <h2>4. ポイント関連</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>発生条件</th>
+          <th>ポイント処理</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>半荘終了時に50,000点未満</td>
+          <td>トップに<strong>10pt</strong>支払い</td>
+        </tr>
+        <tr>
+          <td>焼き鳥1枚</td>
+          <td>トップに<strong>10pt</strong>支払い</td>
+        </tr>
+        <tr>
+          <td>トビ</td>
+          <td>トバしたプレイヤーへ<strong>10pt</strong>支払い</td>
+        </tr>
+        <tr>
+          <td>ラス目</td>
+          <td>トップに<strong>10pt</strong>支払い</td>
+        </tr>
+        <tr>
+          <td>役満1役</td>
+          <td>場に<strong>100pt</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- ==================== 5. グランドクロス ==================== -->
+
+  <h2>5. グランドクロス</h2>
+
+  <div class="special">
+    <strong>グランドクロスとは？</strong>
+    <p>
+      東・南・西・北の4枚を使用して行う特殊処理。
+      <strong>カンに似ているが、通常のカンとは別物</strong>として扱う。
+    </p>
+  </div>
+
+  <h3>5-1. グランドクロスの手順</h3>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div>
+        手牌から<strong>東・南・西・北の4枚</strong>をさらす。
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <div>
+        牌山から<strong>1枚ツモる</strong>。
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <div>
+        <strong>ドラ表示牌を1枚めくる</strong>。
+      </div>
+    </div>
+  </div>
+
+  <h3>5-2. グランドクロスの制限</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>扱い</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>他家から鳴いて行う</td>
+          <td><strong>不可</strong></td>
+        </tr>
+        <tr>
+          <td>加カン</td>
+          <td><strong>不可</strong></td>
+        </tr>
+        <tr>
+          <td>暗刻・刻子として扱う</td>
+          <td><strong>扱わない</strong></td>
+        </tr>
+        <tr>
+          <td>対々和・三暗刻などとの複合</td>
+          <td><strong>不可</strong></td>
+        </tr>
+        <tr>
+          <td>字牌・数牌として扱う</td>
+          <td><strong>扱わない</strong></td>
+        </tr>
+        <tr>
+          <td>清一色・混一色・字一色などとの複合</td>
+          <td><strong>不可</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- ==================== 6. 抜き牌 ==================== -->
+
+  <h2>6. 抜き牌</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>牌</th>
+          <th>扱い</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>一萬・九萬</strong></td>
+          <td>抜き牌</td>
+        </tr>
+        <tr>
+          <td>ドラ・花牌</td>
+          <td><strong>ではない</strong></td>
+        </tr>
+        <tr>
+          <td>河に捨てる</td>
+          <td><strong>可能</strong></td>
+        </tr>
+        <tr>
+          <td>ポン</td>
+          <td><strong>可能</strong></td>
+        </tr>
+        <tr>
+          <td>カン</td>
+          <td><strong>可能</strong></td>
+        </tr>
+        <tr>
+          <td>ロン</td>
+          <td><strong>可能</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- ==================== 7. 焼き鳥 ==================== -->
+
+  <h2>7. 焼き鳥</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>ルール</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ゲーム開始時</td>
+          <td>各プレイヤー<strong>焼き鳥2枚</strong>でスタート</td>
+        </tr>
+        <tr>
+          <td>全員の焼き鳥が解消</td>
+          <td>オーラス以外なら、全員の<strong>焼き鳥2枚を復活</strong></td>
+        </tr>
+        <tr>
+          <td>復活回数</td>
+          <td><strong>1半荘につき1度のみ</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice">
+    <strong>📌 注意</strong>
+    <p>
+      焼き鳥の全員復活は<strong>オーラスでは発生しない</strong>。
+      また、1半荘につき1回まで。
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- ==================== 8. カン ==================== -->
+
+  <h2>8. カン</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>ルール</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5枚目以降のカン</td>
+          <td><strong>可能</strong></td>
+        </tr>
+        <tr>
+          <td>明カンのドラ</td>
+          <td><strong>即乗り</strong></td>
+        </tr>
+        <tr>
+          <td>暗カンのドラ</td>
+          <td><strong>即乗り</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<section id="rules-part2">
+
+  <style>
+    /* ===== Part 2 専用スタイル ===== */
+
+    #rules-part2 {
+      --main: #263238;
+      --sub: #546e7a;
+      --border: #cfd8dc;
+      --header: #455a64;
+      --blue: #1565c0;
+      --blue-light: #e3f2fd;
+      --green: #2e7d32;
+      --green-light: #e8f5e9;
+      --orange: #ef6c00;
+      --orange-light: #fff3e0;
+      --red: #c62828;
+      --red-light: #ffebee;
+      --purple: #6a1b9a;
+      --purple-light: #f3e5f5;
+      --gold: #8d6e00;
+      --gold-light: #fff8e1;
+
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      color: var(--main);
+      line-height: 1.7;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+      box-sizing: border-box;
+    }
+
+    #rules-part2 *,
+    #rules-part2 *::before,
+    #rules-part2 *::after {
+      box-sizing: border-box;
+    }
+
+    #rules-part2 h2 {
+      margin: 36px 0 16px;
+      padding: 10px 14px;
+      border-left: 6px solid var(--blue);
+      background: var(--blue-light);
+      border-radius: 6px;
+      font-size: 1.45rem;
+    }
+
+    #rules-part2 h3 {
+      margin: 24px 0 12px;
+      color: #37474f;
+      font-size: 1.15rem;
+    }
+
+    #rules-part2 h4 {
+      margin: 20px 0 8px;
+      color: #455a64;
+    }
+
+    #rules-part2 p {
+      margin: 10px 0;
+    }
+
+    #rules-part2 hr {
+      border: 0;
+      border-top: 2px solid #eceff1;
+      margin: 35px 0;
+    }
+
+    /* ===== 説明ボックス ===== */
+
+    #rules-part2 .notice {
+      margin: 16px 0;
+      padding: 15px 17px;
+      border-left: 5px solid var(--orange);
+      background: var(--orange-light);
+      border-radius: 7px;
+    }
+
+    #rules-part2 .important {
+      margin: 16px 0;
+      padding: 15px 17px;
+      border-left: 5px solid var(--red);
+      background: var(--red-light);
+      border-radius: 7px;
+    }
+
+    #rules-part2 .special {
+      margin: 16px 0;
+      padding: 15px 17px;
+      border-left: 5px solid var(--purple);
+      background: var(--purple-light);
+      border-radius: 7px;
+    }
+
+    /* ===== テーブル ===== */
+
+    #rules-part2 .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 14px 0 24px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: #fff;
+    }
+
+    #rules-part2 table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    #rules-part2 th,
+    #rules-part2 td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    #rules-part2 th {
+      background: var(--header);
+      color: #fff;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #rules-part2 tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    #rules-part2 tbody tr:hover {
+      background: #f1f8ff;
+    }
+
+    #rules-part2 tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ===== 役数バッジ ===== */
+
+    #rules-part2 .han {
+      display: inline-block;
+      min-width: 58px;
+      padding: 3px 8px;
+      text-align: center;
+      border-radius: 999px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #rules-part2 .han-normal {
+      background: #eceff1;
+      color: #37474f;
+    }
+
+    #rules-part2 .han-1 {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    #rules-part2 .han-2 {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    #rules-part2 .han-3 {
+      background: #fff3e0;
+      color: #ef6c00;
+    }
+
+    #rules-part2 .han-4 {
+      background: #fff8e1;
+      color: #8d6e00;
+    }
+
+    #rules-part2 .han-5 {
+      background: #f3e5f5;
+      color: #6a1b9a;
+    }
+
+    #rules-part2 .han-6plus {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    #rules-part2 .yakuman {
+      display: inline-block;
+      min-width: 72px;
+      padding: 3px 9px;
+      text-align: center;
+      border-radius: 999px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    #rules-part2 .y1 {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    #rules-part2 .y2 {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    #rules-part2 .y3 {
+      background: #fff3e0;
+      color: #ef6c00;
+    }
+
+    #rules-part2 .y4 {
+      background: #fff8e1;
+      color: #8d6e00;
+    }
+
+    #rules-part2 .y5 {
+      background: #f3e5f5;
+      color: #6a1b9a;
+    }
+
+    #rules-part2 .y6plus {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    /* ===== メンゼン・鳴き ===== */
+
+    #rules-part2 .menzen {
+      color: #1565c0;
+      font-weight: 700;
+    }
+
+    #rules-part2 .naki {
+      color: #ef6c00;
+      font-weight: 700;
+    }
+
+    #rules-part2 .none {
+      color: #9e9e9e;
+    }
+
+    /* ===== 七対子カード ===== */
+
+    #rules-part2 .chititoi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 14px 0 24px;
+    }
+
+    #rules-part2 .chititoi-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 15px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: #fff;
+    }
+
+    #rules-part2 .chititoi-name {
+      font-weight: 700;
+    }
+
+    /* ===== 役満カード ===== */
+
+    #rules-part2 .yakuman-summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 15px 0 24px;
+    }
+
+    #rules-part2 .summary-card {
+      padding: 12px;
+      text-align: center;
+      border-radius: 9px;
+      font-weight: 700;
+    }
+
+    #rules-part2 .summary-card .number {
+      display: block;
+      font-size: 1.45rem;
+      margin-bottom: 2px;
+    }
+
+    #rules-part2 .summary-1 {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    #rules-part2 .summary-2 {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    #rules-part2 .summary-3 {
+      background: #fff3e0;
+      color: #ef6c00;
+    }
+
+    #rules-part2 .summary-4plus {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    /* ===== 青天井早見表 ===== */
+
+    #rules-part2 .formula {
+      margin: 16px 0;
+      padding: 18px;
+      text-align: center;
+      background: #263238;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    /* ===== スマホ対応 ===== */
+
+    @media (max-width: 700px) {
+      #rules-part2 {
+        padding: 12px;
+      }
+
+      #rules-part2 h2 {
+        font-size: 1.25rem;
+      }
+
+      #rules-part2 th,
+      #rules-part2 td {
+        padding: 8px 9px;
+        font-size: 0.9rem;
+      }
+
+      #rules-part2 .chititoi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #rules-part2 .yakuman-summary {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+
+  <!-- ==================== 9. 役関連 ==================== -->
+
+  <hr>
+
+  <h2>9. 役関連</h2>
+
+  <!-- ==================== 9-1. 七対子系 ==================== -->
+
+  <h3>9-1. 七対子系</h3>
+
+  <div class="special">
+    <strong>七対子系の特殊ルール</strong>
+    <p>
+      通常の「2枚1組×7組」に限定せず、同一牌を4枚・6枚・8枚使用する特殊な七対子系役が存在する。
+    </p>
+  </div>
+
+  <div class="chititoi-grid">
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">4枚 × 1使い七対子</div>
+      <span class="han han-normal">4役</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">4枚 × 2使い七対子</div>
+      <span class="han han-normal">6役</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">4枚 × 3使い七対子</div>
+      <span class="yakuman y1">1役満</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">一色同順</div>
+      <span class="yakuman y2">2役満</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">6枚 × 1使い七対子</div>
+      <span class="han han-normal">8役</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">6枚 × 1、4枚 × 1使い七対子</div>
+      <span class="yakuman y1">1役満</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">6枚 × 1、4枚 × 2使い七対子</div>
+      <span class="yakuman y1">1役満</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">6枚 × 2使い七対子</div>
+      <span class="yakuman y3">3役満</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">8枚 × 1使い七対子</div>
+      <span class="yakuman y4">4役満</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">8枚 × 1、4枚 × 1使い七対子</div>
+      <span class="yakuman y4">4役満</span>
+    </div>
+
+    <div class="chititoi-card">
+      <div class="chititoi-name">8枚 × 1、6枚 × 1使い七対子</div>
+      <span class="yakuman y4">4役満</span>
+    </div>
+
+  </div>
+
+  <div class="notice">
+    <strong>一色同順の例：</strong>
+    <code>111122223333XX</code>
+  </div>
+
+  <!-- ==================== 9-2. 特殊役 ==================== -->
+
+  <h3>9-2. 特殊役（役満未満）</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>役</th>
+          <th>メンゼン</th>
+          <th>鳴き</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td><strong>オープン立直</strong></td>
+          <td><span class="han han-normal">2役</span></td>
+          <td><span class="none">なし</span></td>
+          <td>リーチ者以外の放銃で1役満</td>
+        </tr>
+
+        <tr>
+          <td><strong>四暗刻</strong></td>
+          <td><span class="han han-normal">4役</span></td>
+          <td><span class="none">なし</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>チャンタ</strong></td>
+          <td><span class="han han-1">6役</span></td>
+          <td><span class="han han-normal">3役</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>本老頭</strong></td>
+          <td><span class="han han-1">6役</span></td>
+          <td><span class="han han-1">6役</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>馬鹿混一</strong></td>
+          <td><span class="none">なし</span></td>
+          <td><span class="han han-1">倍満</span></td>
+          <td>
+            鳴いた混一で、<strong>ドラや他の役なし</strong>で成立
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== 9-3. 役満 ==================== -->
+
+  <h3>9-3. 役満</h3>
+
+  <div class="important">
+    <strong>役満の見方</strong>
+    <p>
+      「役満数」は、その役が成立した際の基本的な役満数。
+      「メンゼン」「鳴き」は、それぞれの状態で成立する役満数を示す。
+    </p>
+  </div>
+
+  <div class="yakuman-summary">
+    <div class="summary-card summary-1">
+      <span class="number">1役満</span>
+      基本役満
+    </div>
+
+    <div class="summary-card summary-2">
+      <span class="number">2役満</span>
+      2倍役満
+    </div>
+
+    <div class="summary-card summary-3">
+      <span class="number">3役満</span>
+      3倍役満
+    </div>
+
+    <div class="summary-card summary-4plus">
+      <span class="number">4役満以上</span>
+      高倍率役満
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>役</th>
+          <th>役満数</th>
+          <th>メンゼン</th>
+          <th>鳴き</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- 1役満 -->
+
+        <tr>
+          <td><strong>四暗刻単騎</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>または7役として扱う</td>
+        </tr>
+
+        <tr>
+          <td><strong>九蓮宝燈</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>天和</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>四暗刻などの場合は単騎にとるなどの高め取り</td>
+        </tr>
+
+        <tr>
+          <td><strong>地和</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>人和</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>緑一色</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>東北新幹線</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>一気通貫＋東北の暗刻と対子</td>
+        </tr>
+
+        <tr>
+          <td><strong>立直+1</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>
+            立直＋ドラ1、または立直＋他1役のみ複合した場合に成立
+          </td>
+        </tr>
+
+        <tr>
+          <td><strong>オープン立直</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>リーチ者以外の放銃で1役満</td>
+        </tr>
+
+        <tr>
+          <td><strong>四連刻</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td>111222333444XXなど</td>
+        </tr>
+
+        <!-- 2役満 -->
+
+        <tr>
+          <td><strong>純正天和</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>一萬、九萬を抜いてない場合に成立</td>
+        </tr>
+
+        <tr>
+          <td><strong>純正地和</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>一萬、九萬を抜いてない場合に成立</td>
+        </tr>
+
+        <tr>
+          <td><strong>大車輪</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>2p～8pすべてを使った七対子</td>
+        </tr>
+
+        <tr>
+          <td><strong>偽九蓮宝燈</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>清一色の9面待ち、フリテンなし</td>
+        </tr>
+
+        <tr>
+          <td><strong>立直のみ</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>ドラや複合役なし</td>
+        </tr>
+
+        <tr>
+          <td><strong>立直＋海底（河底）</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>三人麻雀のみ</td>
+        </tr>
+
+        <tr>
+          <td><strong>流し</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td>条件は流し満貫と同様で鳴き／鳴かれは不成立</td>
+        </tr>
+
+        <tr>
+          <td><strong>裸単騎</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td>立直時は適用されない</td>
+        </tr>
+
+        <tr>
+          <td><strong>黒一色</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td>2p、4p、8p、風牌（東南西北）のみで和了した場合に成立</td>
+        </tr>
+
+        <tr>
+          <td><strong>同牌7枚</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td>萬子含む</td>
+        </tr>
+
+        <tr>
+          <td><strong>純チャンタ</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td><span class="yakuman y1">1役満</span></td>
+          <td>高め純チャンタ、安め役なしが多発するので注意</td>
+        </tr>
+
+        <!-- 3役満 -->
+
+        <tr>
+          <td><strong>四槓子</strong></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td>パオあり</td>
+        </tr>
+
+        <tr>
+          <td><strong>紅孔雀</strong></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td>1s、5s、7s、9s、中のみで和了した際に成立</td>
+        </tr>
+
+        <tr>
+          <td><strong>背一色</strong></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td>牌の背面がすべて同色で和了した際に成立。背一色のみでは役を確定できないので、立直など他の役が必要</td>
+        </tr>
+
+        <tr>
+          <td><strong>Wグランドクロス</strong></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td><span class="yakuman y2">2役満</span></td>
+          <td>グランドクロスを2回した状態で和了。役が確定しているので立直不要</td>
+        </tr>
+
+        <!-- 4役満 -->
+
+        <tr>
+          <td><strong>純正九蓮宝燈</strong></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td><span class="none">なし</span></td>
+          <td>フリテンなし</td>
+        </tr>
+
+        <tr>
+          <td><strong>国士無双</strong></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td><span class="none">なし</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>大三元</strong></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td>パオあり</td>
+        </tr>
+
+        <tr>
+          <td><strong>萬混一</strong></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>同牌8枚</strong></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td>萬子含む</td>
+        </tr>
+
+        <tr>
+          <td><strong>Tグランドクロス</strong></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td><span class="yakuman y3">3役満</span></td>
+          <td>グランドクロスを3回した状態で和了。役が確定しているので立直不要</td>
+        </tr>
+
+        <!-- 5役満 -->
+
+        <tr>
+          <td><strong>字一色</strong></td>
+          <td><span class="yakuman y5">5役満</span></td>
+          <td><span class="yakuman y5">5役満</span></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>小四喜</strong></td>
+          <td><span class="yakuman y5">5役満</span></td>
+          <td><span class="yakuman y5">5役満</span></td>
+          <td><span class="yakuman y4">4役満</span></td>
+          <td></td>
+        </tr>
+
+        <!-- 6役満以上 -->
+
+        <tr>
+          <td><strong>国士11面</strong></td>
+          <td><span class="yakuman y6plus">6役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td><span class="none">なし</span></td>
+          <td>フリテンなし</td>
+        </tr>
+
+        <tr>
+          <td><strong>清老頭</strong></td>
+          <td><span class="yakuman y6plus">7役満</span></td>
+          <td><span class="yakuman y6plus">7役満</span></td>
+          <td><span class="yakuman y6plus">6役満</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><strong>大四喜</strong></td>
+          <td><span class="yakuman y6plus">7役満</span></td>
+          <td><span class="yakuman y6plus">7役満</span></td>
+          <td><span class="yakuman y6plus">6役満</span></td>
+          <td>パオあり</td>
+        </tr>
+
+        <tr>
+          <td><strong>大七星</strong></td>
+          <td><span class="yakuman y6plus">10役満</span></td>
+          <td><span class="none">なし</span></td>
+          <td><span class="none">なし</span></td>
+          <td>全種の字牌を使用した七対子</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== 9-4. 役満加算 ==================== -->
+
+  <h3>9-4. 役満加算ルール</h3>
+
+  <div class="important">
+    <strong>30役以上は追加役満が発生</strong>
+    <p>
+      30役を超えた場合、30役で1役満。
+      以降<strong>5役増えるごとに1役満を追加</strong>する。
+    </p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>合計役数</th>
+          <th>追加される役満</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>30役</strong></td>
+          <td><span class="yakuman y1">1役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>35役</strong></td>
+          <td><span class="yakuman y2">2役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>40役</strong></td>
+          <td><span class="yakuman y3">3役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>45役</strong></td>
+          <td><span class="yakuman y4">4役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>50役</strong></td>
+          <td><span class="yakuman y5">5役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>以降</strong></td>
+          <td>5役増えるごとに1役満追加</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- ==================== 10. 点数 ==================== -->
+
+  <h2>10. 点数</h2>
+
+  <h3>10-1. 青天井</h3>
+
+  <div class="special">
+    <strong>青天井方式</strong>
+    <p>
+      点数計算に通常の役満上限を設けず、役数に応じて点数を加算する。
+    </p>
+  </div>
+
+  <div class="formula">
+    数え役満 ＝ 4倍満貫<br>
+    ↓<br>
+    以降、3役ごとに1満貫分を上乗せ
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>区分</th>
+          <th>扱い</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>通常の役数</td>
+          <td>通常通り役数に応じて計算</td>
+        </tr>
+        <tr>
+          <td>数え役満</td>
+          <td><strong>4倍満貫</strong></td>
+        </tr>
+        <tr>
+          <td>数え役満以降</td>
+          <td><strong>3役ごとに1満貫分を上乗せ</strong></td>
+        </tr>
+        <tr>
+          <td>点数上限</td>
+          <td><strong>なし（青天井）</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice">
+    <strong>📌 ポイント</strong>
+    <p>
+      このルールでは「満貫・跳満・倍満・三倍満・役満」で点数を打ち止めにせず、
+      役数が増えればその分だけ点数も増加する。
+    </p>
+  </div>
+
+</section>
