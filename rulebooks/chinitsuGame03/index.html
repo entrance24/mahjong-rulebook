@@ -524,11 +524,11 @@
         </tr>
         <tr>
           <td>リーチ後に待ちが変わる暗カン</td>
-          <td><strong>フリテン扱い（※ツモ和了のみOK）</strong></td>
+          <td><strong>チョンボ + フリテン扱い</strong></td>
         </tr>
         <tr>
           <td>リーチ後の暗カンでノーテンになった場合</td>
-          <td><strong>流局時、</strong>場に満貫支払い</td>
+          <td>流局時、<strong>場に満貫支払い</strong></td>
         </tr>
         <tr>
           <td>誤ロン・誤ツモによる手牌晒し</td>
@@ -1679,7 +1679,7 @@
 
   <hr>
 
-  <!-- ==================== 10. 点数 ==================== -->
+    <!-- ==================== 10. 点数 ==================== -->
 
   <h2>10. 点数</h2>
 
@@ -1688,51 +1688,384 @@
   <div class="special">
     <strong>青天井方式</strong>
     <p>
-      点数計算に通常の役満上限を設けず、役数に応じて点数を加算する。
+      本ルールでは、13役以上を数え役満として扱い、
+      <strong>4倍満貫を基準</strong>として、以降<strong>3役増えるごとに1満貫分を追加</strong>する。
+    </p>
+    <p>
+      また、30役以上では別途「役満数」が発生し、
+      <strong>30役＝1役満、以降5役ごとに1役満追加</strong>とする。
     </p>
   </div>
 
   <div class="formula">
-    数え役満 ＝ 4倍満貫<br>
+    13～15役：4倍満貫<br>
+    16～18役：5倍満貫<br>
+    19～21役：6倍満貫<br>
+    22～24役：7倍満貫<br>
+    25～27役：8倍満貫<br>
+    28～30役：9倍満貫<br>
     ↓<br>
-    以降、3役ごとに1満貫分を上乗せ
+    以降、3役ごとに1倍満貫分を追加
   </div>
 
+  <h3>10-2. 役数・点数・役満数一覧</h3>
+
   <div class="table-wrap">
-    <table>
+    <table class="score-table">
       <thead>
         <tr>
-          <th>区分</th>
-          <th>扱い</th>
+          <th>役数</th>
+          <th>点数</th>
+          <th>役満数</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
-          <td>通常の役数</td>
-          <td>通常通り役数に応じて計算</td>
+          <td><strong>13役</strong></td>
+          <td>8,000点（4倍満貫）</td>
+          <td>－</td>
         </tr>
         <tr>
-          <td>数え役満</td>
-          <td><strong>4倍満貫</strong></td>
+          <td><strong>14役</strong></td>
+          <td>8,000点（4倍満貫）</td>
+          <td>－</td>
         </tr>
         <tr>
-          <td>数え役満以降</td>
-          <td><strong>3役ごとに1満貫分を上乗せ</strong></td>
+          <td><strong>15役</strong></td>
+          <td>8,000点（4倍満貫）</td>
+          <td>－</td>
+        </tr>
+
+        <tr>
+          <td><strong>16役</strong></td>
+          <td>10,000点（5倍満貫）</td>
+          <td>－</td>
         </tr>
         <tr>
-          <td>点数上限</td>
-          <td><strong>なし（青天井）</strong></td>
+          <td><strong>17役</strong></td>
+          <td>10,000点（5倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><strong>18役</strong></td>
+          <td>10,000点（5倍満貫）</td>
+          <td>－</td>
+        </tr>
+
+        <tr>
+          <td><strong>19役</strong></td>
+          <td>12,000点（6倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><strong>20役</strong></td>
+          <td>12,000点（6倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><strong>21役</strong></td>
+          <td>12,000点（6倍満貫）</td>
+          <td>－</td>
+        </tr>
+
+        <tr>
+          <td><strong>22役</strong></td>
+          <td>14,000点（7倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><strong>23役</strong></td>
+          <td>14,000点（7倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><strong>24役</strong></td>
+          <td>14,000点（7倍満貫）</td>
+          <td>－</td>
+        </tr>
+
+        <tr>
+          <td><strong>25役</strong></td>
+          <td>16,000点（8倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><strong>26役</strong></td>
+          <td>16,000点（8倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><strong>27役</strong></td>
+          <td>16,000点（8倍満貫）</td>
+          <td>－</td>
+        </tr>
+
+        <tr>
+          <td><strong>28役</strong></td>
+          <td>18,000点（9倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr>
+          <td><strong>29役</strong></td>
+          <td>18,000点（9倍満貫）</td>
+          <td>－</td>
+        </tr>
+        <tr class="yakuman-start">
+          <td><strong>30役</strong></td>
+          <td>18,000点（9倍満貫）</td>
+          <td><span class="yakuman y1">1役満</span></td>
+        </tr>
+
+        <tr>
+          <td><strong>31役</strong></td>
+          <td>20,000点（10倍満貫）</td>
+          <td>1役満</td>
+        </tr>
+        <tr>
+          <td><strong>32役</strong></td>
+          <td>20,000点（10倍満貫）</td>
+          <td>1役満</td>
+        </tr>
+        <tr>
+          <td><strong>33役</strong></td>
+          <td>20,000点（10倍満貫）</td>
+          <td>1役満</td>
+        </tr>
+        <tr>
+          <td><strong>34役</strong></td>
+          <td>20,000点（10倍満貫）</td>
+          <td>1役満</td>
+        </tr>
+
+        <tr class="yakuman-start">
+          <td><strong>35役</strong></td>
+          <td>22,000点（11倍満貫）</td>
+          <td><span class="yakuman y2">2役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>36役</strong></td>
+          <td>22,000点（11倍満貫）</td>
+          <td>2役満</td>
+        </tr>
+        <tr>
+          <td><strong>37役</strong></td>
+          <td>22,000点（11倍満貫）</td>
+          <td>2役満</td>
+        </tr>
+        <tr>
+          <td><strong>38役</strong></td>
+          <td>24,000点（12倍満貫）</td>
+          <td>2役満</td>
+        </tr>
+        <tr>
+          <td><strong>39役</strong></td>
+          <td>24,000点（12倍満貫）</td>
+          <td>2役満</td>
+        </tr>
+
+        <tr class="yakuman-start">
+          <td><strong>40役</strong></td>
+          <td>24,000点（12倍満貫）</td>
+          <td><span class="yakuman y3">3役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>41役</strong></td>
+          <td>26,000点（13倍満貫）</td>
+          <td>3役満</td>
+        </tr>
+        <tr>
+          <td><strong>42役</strong></td>
+          <td>26,000点（13倍満貫）</td>
+          <td>3役満</td>
+        </tr>
+        <tr>
+          <td><strong>43役</strong></td>
+          <td>26,000点（13倍満貫）</td>
+          <td>3役満</td>
+        </tr>
+        <tr>
+          <td><strong>44役</strong></td>
+          <td>26,000点（13倍満貫）</td>
+          <td>3役満</td>
+        </tr>
+
+        <tr class="yakuman-start">
+          <td><strong>45役</strong></td>
+          <td>28,000点（14倍満貫）</td>
+          <td><span class="yakuman y4">4役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>46役</strong></td>
+          <td>28,000点（14倍満貫）</td>
+          <td>4役満</td>
+        </tr>
+        <tr>
+          <td><strong>47役</strong></td>
+          <td>28,000点（14倍満貫）</td>
+          <td>4役満</td>
+        </tr>
+        <tr>
+          <td><strong>48役</strong></td>
+          <td>30,000点（15倍満貫）</td>
+          <td>4役満</td>
+        </tr>
+        <tr>
+          <td><strong>49役</strong></td>
+          <td>30,000点（15倍満貫）</td>
+          <td>4役満</td>
+        </tr>
+
+        <tr class="yakuman-start">
+          <td><strong>50役</strong></td>
+          <td>30,000点（15倍満貫）</td>
+          <td><span class="yakuman y5">5役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>51役</strong></td>
+          <td>32,000点（16倍満貫）</td>
+          <td>5役満</td>
+        </tr>
+        <tr>
+          <td><strong>52役</strong></td>
+          <td>32,000点（16倍満貫）</td>
+          <td>5役満</td>
+        </tr>
+        <tr>
+          <td><strong>53役</strong></td>
+          <td>32,000点（16倍満貫）</td>
+          <td>5役満</td>
+        </tr>
+        <tr>
+          <td><strong>54役</strong></td>
+          <td>32,000点（16倍満貫）</td>
+          <td>5役満</td>
+        </tr>
+
+        <tr class="yakuman-start">
+          <td><strong>55役</strong></td>
+          <td>34,000点（17倍満貫）</td>
+          <td><span class="yakuman y6plus">6役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>56役</strong></td>
+          <td>34,000点（17倍満貫）</td>
+          <td>6役満</td>
+        </tr>
+        <tr>
+          <td><strong>57役</strong></td>
+          <td>34,000点（17倍満貫）</td>
+          <td>6役満</td>
+        </tr>
+        <tr>
+          <td><strong>58役</strong></td>
+          <td>36,000点（18倍満貫）</td>
+          <td>6役満</td>
+        </tr>
+        <tr>
+          <td><strong>59役</strong></td>
+          <td>36,000点（18倍満貫）</td>
+          <td>6役満</td>
+        </tr>
+
+        <tr class="yakuman-start">
+          <td><strong>60役</strong></td>
+          <td>36,000点（18倍満貫）</td>
+          <td><span class="yakuman y6plus">7役満</span></td>
+        </tr>
+        <tr>
+          <td><strong>61役</strong></td>
+          <td>38,000点（19倍満貫）</td>
+          <td>7役満</td>
+        </tr>
+        <tr>
+          <td><strong>62役</strong></td>
+          <td>38,000点（19倍満貫）</td>
+          <td>7役満</td>
+        </tr>
+        <tr>
+          <td><strong>63役</strong></td>
+          <td>38,000点（19倍満貫）</td>
+          <td>7役満</td>
+        </tr>
+        <tr>
+          <td><strong>64役</strong></td>
+          <td>38,000点（19倍満貫）</td>
+          <td>7役満</td>
+        </tr>
+
+        <tr class="yakuman-start">
+          <td><strong>65役</strong></td>
+          <td>40,000点（20倍満貫）</td>
+          <td><span class="yakuman y6plus">8役満</span></td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="notice">
-    <strong>📌 ポイント</strong>
+    <strong>📌 役満数について</strong>
     <p>
-      このルールでは「満貫・跳満・倍満・三倍満・役満」で点数を打ち止めにせず、
-      役数が増えればその分だけ点数も増加する。
+      役満数は、役数30役以上について
+      <strong>30役＝1役満</strong>とし、
+      以降<strong>5役増えるごとに1役満追加</strong>する。
+    </p>
+    <p>
+      したがって、30役・35役・40役・45役・50役・55役・60役・65役で、
+      それぞれ1役満・2役満・3役満・4役満・5役満・6役満・7役満・8役満となる。
     </p>
   </div>
 
-</section>
+  <div class="important">
+    <strong>⚠️ 点数支払いについて</strong>
+    <p>
+      上記の「点数」は青天井計算における<strong>基準点</strong>を示す。
+      実際の親・子のロン点およびツモ点については、
+      本ルールにおける三人麻雀の支払い方式に従う。
+    </p>
+  </div>
+
+  <style>
+    /* ===== 10. 点数表専用 ===== */
+
+    #rules-part2 .score-table {
+      min-width: 560px;
+    }
+
+    #rules-part2 .score-table th:nth-child(1),
+    #rules-part2 .score-table td:nth-child(1) {
+      width: 25%;
+      text-align: center;
+    }
+
+    #rules-part2 .score-table th:nth-child(2),
+    #rules-part2 .score-table td:nth-child(2) {
+      width: 45%;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    #rules-part2 .score-table th:nth-child(3),
+    #rules-part2 .score-table td:nth-child(3) {
+      width: 30%;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    #rules-part2 .score-table tbody tr.yakuman-start {
+      border-top: 3px solid #cfd8dc;
+    }
+
+    #rules-part2 .score-table tbody tr.yakuman-start td:first-child {
+      background: #fff8e1;
+      color: #5d4037;
+    }
+
+    @media (max-width: 700px) {
+      #rules-part2 .score-table th,
+      #rules-part2 .score-table td {
+        padding: 8px 9px;
+        font-size: 0.88rem;
+      }
+    }
+  </style>
