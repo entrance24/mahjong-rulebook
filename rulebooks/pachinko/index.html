@@ -1,1 +1,1742 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パチンコ（少牌確変チューリップ） ルールブック</title>
+
+<style>
+:root {
+  --main: #b71c1c;
+  --main-dark: #7f0000;
+  --sub: #fff3f3;
+  --accent: #f9a825;
+  --accent-light: #fff8e1;
+  --blue: #1565c0;
+  --blue-light: #e3f2fd;
+  --green: #2e7d32;
+  --green-light: #e8f5e9;
+  --gray: #f5f5f5;
+  --border: #ddd;
+  --text: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: var(--text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN",
+    Meiryo, sans-serif;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  padding: 30px 40px 60px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+header {
+  border-bottom: 4px solid var(--main);
+  margin-bottom: 30px;
+  padding-bottom: 18px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  color: var(--main-dark);
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0;
+  color: #666;
+}
+
+h2 {
+  margin-top: 42px;
+  padding: 10px 14px;
+  border-left: 6px solid var(--main);
+  background: var(--sub);
+  color: var(--main-dark);
+  font-size: 1.45rem;
+}
+
+h3 {
+  margin-top: 28px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ddd;
+  color: #444;
+  font-size: 1.15rem;
+}
+
+h4 {
+  margin-top: 20px;
+  color: var(--main-dark);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0 22px;
+  background: #fff;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  vertical-align: top;
+}
+
+th {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+ul,
+ol {
+  padding-left: 1.6em;
+}
+
+li {
+  margin: 4px 0;
+}
+
+.note,
+.warning,
+.point,
+.rule-box {
+  margin: 18px 0;
+  padding: 15px 18px;
+  border-radius: 6px;
+}
+
+.note {
+  background: var(--blue-light);
+  border-left: 5px solid var(--blue);
+}
+
+.warning {
+  background: #fff3e0;
+  border-left: 5px solid #ef6c00;
+}
+
+.point {
+  background: var(--accent-light);
+  border-left: 5px solid var(--accent);
+}
+
+.rule-box {
+  background: var(--green-light);
+  border-left: 5px solid var(--green);
+}
+
+.note-title,
+.warning-title,
+.point-title,
+.rule-title {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.note-title {
+  color: var(--blue);
+}
+
+.warning-title {
+  color: #e65100;
+}
+
+.point-title {
+  color: #f57f17;
+}
+
+.rule-title {
+  color: var(--green);
+}
+
+.highlight {
+  color: var(--main);
+  font-weight: bold;
+}
+
+.gold {
+  color: #b8860b;
+  font-weight: bold;
+}
+
+.small {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 2px;
+  border-radius: 12px;
+  background: #eee;
+  font-size: 0.85em;
+}
+
+.badge-red {
+  background: #ffebee;
+  color: #b71c1c;
+}
+
+.badge-gold {
+  background: #fff8e1;
+  color: #8d6e00;
+}
+
+.badge-blue {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.section-index {
+  margin: 20px 0 30px;
+  padding: 15px 20px;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.section-index ol {
+  margin: 0;
+}
+
+.section-index a {
+  color: var(--main-dark);
+  text-decoration: none;
+}
+
+.section-index a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  color: #777;
+  font-size: 0.85em;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 20px 15px 40px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <h1>パチンコ（少牌確変チューリップ） ルールブック</h1>
+  <p>三人麻雀をベースに、少牌マイティー・ビンゴ・チューリップ・確変・16Rを組み合わせた特殊麻雀</p>
+</header>
+
+<div class="section-index">
+  <strong>目次</strong>
+  <ol>
+    <li><a href="#tiles">牌構成</a></li>
+    <li><a href="#basic">基本ルール</a></li>
+    <li><a href="#short">少牌マイティー</a></li>
+    <li><a href="#nuki">抜き牌</a></li>
+    <li><a href="#kan">カン</a></li>
+    <li><a href="#chonbo">チョンボ</a></li>
+  </ol>
+</div>
+
+
+<!-- ==================== 1. 牌構成 ==================== -->
+
+<h2 id="tiles">1. 牌構成</h2>
+
+<p>
+本ゲームでは、通常の三人麻雀で使用する牌構成をベースに、
+<strong>5p・5sを各6枚</strong>とし、さらに一萬・九萬をビンゴ牌として使用します。
+</p>
+
+<h3>1-1. 牌の内訳</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>牌</th>
+      <th>枚数</th>
+      <th>特殊仕様</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5p</td>
+      <td>6枚</td>
+      <td>
+        通常5p：3枚<br>
+        <span class="badge badge-red">赤5p：2枚・ドラ1</span><br>
+        <span class="badge badge-gold">金5p：1枚・ドラ1</span>
+      </td>
+    </tr>
+    <tr>
+      <td>5s</td>
+      <td>6枚</td>
+      <td>
+        通常5s：3枚<br>
+        <span class="badge badge-red">赤5s：2枚・ドラ1</span><br>
+        <span class="badge badge-gold">金5s：1枚・ドラ1</span>
+      </td>
+    </tr>
+    <tr>
+      <td>5p・5s以外の筒子・索子</td>
+      <td>64枚</td>
+      <td>
+        1p～4p、6p～9p、1s～4s、6s～9sを各4枚
+      </td>
+    </tr>
+    <tr>
+      <td>風牌・三元牌</td>
+      <td>28枚</td>
+      <td>
+        東・南・西・北・白・發・中を各4枚
+      </td>
+    </tr>
+    <tr>
+      <td>1m・9m</td>
+      <td>8枚</td>
+      <td>
+        各4枚。ビンゴ牌として使用
+      </td>
+    </tr>
+    <tr>
+      <th>合計</th>
+      <th>112枚</th>
+      <th>通常三人麻雀＋花ありと同じ総枚数</th>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <span class="note-title">牌構成のポイント</span>
+  5p・5sは通常の4枚構成ではなく、それぞれ6枚使用します。
+  そのうち赤牌2枚、金牌1枚が含まれます。
+  また、1m・9mは通常の数牌としてだけでなく、ビンゴシステムに関係する特殊牌です。
+</div>
+
+
+<h3>1-2. 赤ドラ・金ドラ</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>牌</th>
+      <th>枚数</th>
+      <th>ドラ</th>
+      <th>チップ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>赤5p</td>
+      <td>2枚</td>
+      <td>ドラ1</td>
+      <td>1枚</td>
+    </tr>
+    <tr>
+      <td>赤5s</td>
+      <td>2枚</td>
+      <td>ドラ1</td>
+      <td>1枚</td>
+    </tr>
+    <tr>
+      <td>金5p</td>
+      <td>1枚</td>
+      <td>ドラ1</td>
+      <td>2枚</td>
+    </tr>
+    <tr>
+      <td>金5s</td>
+      <td>1枚</td>
+      <td>ドラ1</td>
+      <td>2枚</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="point">
+  <span class="point-title">チップについて</span>
+  赤ドラ・金ドラは<strong>立直の有無にかかわらず</strong>チップ対象となります。
+  チップの詳細は「チップ・スコア」の章で説明します。
+</div>
+
+
+<!-- ==================== 2. 基本ルール ==================== -->
+
+<h2 id="basic">2. 基本ルール</h2>
+
+<h3>2-1. ゲーム形式</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>ルール</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>人数</td>
+      <td>三人麻雀</td>
+    </tr>
+    <tr>
+      <td>場</td>
+      <td>東南戦</td>
+    </tr>
+    <tr>
+      <td>持ち点</td>
+      <td>35,000点持ち・40,000点返し</td>
+    </tr>
+    <tr>
+      <td>ツモ</td>
+      <td>ツモ損あり</td>
+    </tr>
+    <tr>
+      <td>本場</td>
+      <td>なし</td>
+    </tr>
+    <tr>
+      <td>トビ</td>
+      <td>あり。トビ終了</td>
+    </tr>
+    <tr>
+      <td>0点</td>
+      <td>0点の場合は継続</td>
+    </tr>
+    <tr>
+      <td>立直</td>
+      <td>1,000点未満では立直不可</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2-2. 和了・流局・局の進行</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>ルール</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>オーラスの親</td>
+      <td>和了止め・テンパイ止めなし</td>
+    </tr>
+    <tr>
+      <td>供託</td>
+      <td>終局時はトップ取り</td>
+    </tr>
+    <tr>
+      <td>ダブロン</td>
+      <td>あり</td>
+    </tr>
+    <tr>
+      <td>ダブロン時の供託</td>
+      <td>上家取り</td>
+    </tr>
+    <tr>
+      <td>九種九牌</td>
+      <td>あり。成立時は親継続</td>
+    </tr>
+    <tr>
+      <td>四槓子散了</td>
+      <td>なし。牌山が残っている限りカン可能</td>
+    </tr>
+    <tr>
+      <td>ドラ表示牌</td>
+      <td>ドラ表示牌の隣までツモりきる</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2-3. 鳴き・立直・フリテン</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>ルール</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>喰いタン</td>
+      <td>なし</td>
+    </tr>
+    <tr>
+      <td>後付け</td>
+      <td>なし</td>
+    </tr>
+    <tr>
+      <td>フリテン立直</td>
+      <td>あり</td>
+    </tr>
+    <tr>
+      <td>国士無双の暗カンロン</td>
+      <td>あり</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2-4. カンドラ・責任払い・パオ</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>ルール</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>暗カンのドラ</td>
+      <td>即乗り</td>
+    </tr>
+    <tr>
+      <td>明カンのドラ</td>
+      <td>後乗り</td>
+    </tr>
+    <tr>
+      <td>明カンの責任払い</td>
+      <td>あり</td>
+    </tr>
+    <tr>
+      <td>パオ</td>
+      <td>あり</td>
+    </tr>
+    <tr>
+      <td>パオ対象</td>
+      <td>大三元・四槓子・大四喜</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="warning">
+  <span class="warning-title">パオ対象</span>
+  パオは<strong>大三元・四槓子・大四喜</strong>に適用されます。
+</div>
+
+<h3>2-5. 祝儀・チップ</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>ルール</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>役満祝儀</td>
+      <td>あり</td>
+    </tr>
+    <tr>
+      <td>チップ</td>
+      <td>あり</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ==================== 3. 少牌マイティー ==================== -->
+
+<h2 id="short">3. 少牌マイティー</h2>
+
+<div class="rule-box">
+  <span class="rule-title">少牌マイティーとは</span>
+  通常より1枚少ない手牌でゲームを進行し、その「足りない1枚」を
+  <strong>オールマイティ</strong>として扱う特殊ルールです。
+</div>
+
+<h3>3-1. 配牌枚数</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>プレイヤー</th>
+      <th>通常</th>
+      <th>本ルール</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>親</td>
+      <td>14枚</td>
+      <td><strong>13枚</strong></td>
+    </tr>
+    <tr>
+      <td>子</td>
+      <td>13枚</td>
+      <td><strong>12枚</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+以降も常に1枚足りない状態で進行します。
+足りない1枚は、ゲーム中ずっと<strong>オールマイティ牌</strong>として扱います。
+</p>
+
+<h3>3-2. オールマイティ牌の扱い</h3>
+
+<ul>
+  <li>実際には存在しない牌でも指定できます。</li>
+  <li>例えば「5枚目の4s」のように、通常の牌構成では存在しない牌でも構いません。</li>
+  <li>オールマイティ牌を使用した<strong>鳴きはできません</strong>。</li>
+  <li>オールマイティ牌を使用した<strong>暗カンはできません</strong>。</li>
+  <li>オールマイティ牌は、通常の牌とは異なる特殊な1枚として扱います。</li>
+</ul>
+
+<div class="warning">
+  <span class="warning-title">オールマイティ牌の決定タイミング</span>
+  オールマイティ牌は、<strong>裏ドラ確認後、チューリップ（確変・16R）開始前</strong>に決定します。
+  詳細な決定方法は「ビンゴ」の章で説明します。
+</div>
+
+
+<!-- ==================== 4. 抜き牌 ==================== -->
+
+<h2 id="nuki">4. 抜き牌</h2>
+
+<p>
+本ゲームでは、<strong>1m・9m・北</strong>を抜き牌として使用します。
+抜いた牌はすべて<strong>ドラ1</strong>として扱います。
+</p>
+
+<h3>4-1. 抜き牌の種類</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>牌</th>
+      <th>ドラ</th>
+      <th>特殊扱い</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1m</td>
+      <td>ドラ1</td>
+      <td>ビンゴ牌</td>
+    </tr>
+    <tr>
+      <td>9m</td>
+      <td>ドラ1</td>
+      <td>ビンゴ牌</td>
+    </tr>
+    <tr>
+      <td>北</td>
+      <td>ドラ1</td>
+      <td>通常の抜き牌</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4-2. 抜き牌の基本処理</h3>
+
+<ul>
+  <li>1m・9m・北は抜いて使用できます。</li>
+  <li>抜いた牌はドラ1として扱います。</li>
+  <li>1m・9mはビンゴ牌でもあります。</li>
+  <li>抜いた1m・9m・北を<strong>河に捨てることも可能</strong>です。</li>
+  <li>抜き牌に対して<strong>ポン・カン・ロン</strong>が可能です。</li>
+</ul>
+
+<h3>4-3. 抜いた直後のツモ和了</h3>
+
+<div class="rule-box">
+  <span class="rule-title">嶺上開花扱い</span>
+  抜き牌を抜いた直後のツモで和了した場合は、
+  <strong>嶺上開花</strong>として扱います。
+</div>
+
+
+<!-- ==================== 5. カン ==================== -->
+
+<h2 id="kan">5. カン</h2>
+
+<h3>5-1. 5枚目以降のカン</h3>
+
+<p>
+通常の麻雀では同一牌を4枚までしか使用できませんが、
+本ルールでは<strong>5枚目以降のカンが可能</strong>です。
+</p>
+
+<div class="rule-box">
+  <span class="rule-title">カンの制限</span>
+  5枚目以降のカンも通常のカンと同様に、牌山が残っている限り行えます。
+  四槓子散了は採用しません。
+</div>
+
+<h3>5-2. カンドラ</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>カンの種類</th>
+      <th>ドラの扱い</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>暗カン</td>
+      <td><strong>即乗り</strong></td>
+    </tr>
+    <tr>
+      <td>明カン</td>
+      <td><strong>後乗り</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>5-3. その他のカン関連ルール</h3>
+
+<ul>
+  <li>四槓子散了はありません。</li>
+  <li>牌山が残っている限り、カンの回数に制限はありません。</li>
+  <li>明カンには責任払いがあります。</li>
+  <li>国士無双は暗カンロンが可能です。</li>
+</ul>
+
+
+<!-- ==================== 6. チョンボ ==================== -->
+
+<h2 id="chonbo">6. チョンボ</h2>
+
+<h3>6-1. チョンボの基本処理</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ケース</th>
+      <th>処理</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>通常のチョンボ</td>
+      <td>フリテン扱い</td>
+    </tr>
+    <tr>
+      <td>リーチ後、待ちが変わる暗カン</td>
+      <td>チョンボ。フリテン扱い</td>
+    </tr>
+    <tr>
+      <td>誤ロンによる手牌晒し</td>
+      <td>その局中はオープン扱い</td>
+    </tr>
+    <tr>
+      <td>誤ツモによる手牌晒し</td>
+      <td>その局中はオープン扱い</td>
+    </tr>
+    <tr>
+      <td>その他</td>
+      <td>当事者同士で決定</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="warning">
+  <span class="warning-title">リーチ後の暗カン</span>
+  リーチ後に暗カンを行った結果、待ちが変わる場合はチョンボです。
+  この場合は<strong>フリテン扱い</strong>となります。
+</div>
+
+<div class="note">
+  <span class="note-title">誤ロン・誤ツモ</span>
+  誤ロンまたは誤ツモによって手牌を晒してしまった場合、
+  その局が終了するまで手牌は<strong>オープン扱い</strong>となります。
+</div>
+
+<!-- ==================== 7. ビンゴ ==================== -->
+
+<h2 id="bingo">7. ビンゴ</h2>
+
+<p>
+本ルールの特徴的なシステムとして、
+<strong>チューリップ・確変・16R・突然確変・ストック</strong>があります。
+これらは、和了条件や手牌に使用している牌、ビンゴによるチップ獲得状況によって発生・継続します。
+</p>
+
+<div class="rule-box">
+  <span class="rule-title">ビンゴシステムの基本的な流れ</span>
+  <ol>
+    <li>対象となる和了をすると、チューリップが開始します。</li>
+    <li>チューリップ中にビンゴ牌を確認します。</li>
+    <li>条件を満たしてチップを獲得するとチューリップが継続します。</li>
+    <li>一定条件を満たすと「確変」へ昇格します。</li>
+    <li>さらに条件を満たすと「16R」へ昇格します。</li>
+    <li>突然確変の条件を満たすと、上位状態へ昇格します。</li>
+    <li>ストックを所持している場合、転落時に1個消費して継続できます。</li>
+  </ol>
+</div>
+
+
+<h3>7-1. チューリップ</h3>
+
+<p>
+以下のいずれかの和了をした場合、チューリップが発生します。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>対象となる和了</th>
+      <th>チューリップ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>立直和了</td>
+      <td>発生</td>
+    </tr>
+    <tr>
+      <td>天和</td>
+      <td>発生</td>
+    </tr>
+    <tr>
+      <td>地和</td>
+      <td>発生</td>
+    </tr>
+    <tr>
+      <td>人和</td>
+      <td>発生</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <span class="note-title">チューリップ対象和了</span>
+  「立直・天和・地和・人和」による和了がチューリップの対象です。
+  ただし、チューリップ中にどのようにビンゴを判定するかは、以下のルールに従います。
+</div>
+
+
+<h3>7-2. ビンゴ牌を抜いている場合</h3>
+
+<p>
+和了時点で1mまたは9mを抜いている場合は、
+<strong>通常の点数清算を行った後にビンゴの効果を発動</strong>します。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>抜いている牌</th>
+      <th>抜き牌の扱い</th>
+      <th>手牌に加える対象</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1m</td>
+      <td>5pとして手牌に加える</td>
+      <td>5p</td>
+    </tr>
+    <tr>
+      <td>9m</td>
+      <td>5sとして手牌に加える</td>
+      <td>5s</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+例えば1mを抜いている場合は、1mを<strong>5pとして手牌に加え</strong>、
+その後5pをめくった場合はその5pを手牌に加える。
+</p>
+
+<p>
+9mの場合も同様に、9mを<strong>5sとして手牌に加え</strong>、
+その後5sをめくった場合はその5sを手牌に加える。
+</p>
+
+
+<h3>7-3. チューリップ中のビンゴ</h3>
+
+<p>
+チューリップ中は、ドラ表示牌の隣をめくり、
+めくった牌とその両隣の牌が手牌に存在するか確認します。
+</p>
+
+<div class="rule-box">
+  <span class="rule-title">チューリップの流れ</span>
+  <ol>
+    <li>オールマイティ牌を決定する。</li>
+    <li>ドラ表示牌の隣を、反時計回りに上段からめくる。</li>
+    <li>めくった牌と、その両隣の牌が手牌に存在するか確認する。</li>
+    <li>対象牌が手牌にあれば、その枚数分のチップを獲得する。</li>
+    <li>チップを獲得できればチューリップ継続。</li>
+    <li>チップを獲得できなければチューリップ終了（転落）。</li>
+    <li>突然確変 → 確変へ昇格</li>
+  </ol>
+</div>
+
+<div class="point">
+  <span class="point-title">チップ獲得枚数</span>
+  めくった牌そのものと、その両隣の牌が手牌にあるかを確認し、
+  <strong>該当する枚数だけチップを獲得</strong>します。
+</div>
+
+
+<h3>7-4. チューリップでビンゴ牌をめくった場合</h3>
+
+<p>
+チューリップ中に1mまたは9mをめくった場合も、
+通常のビンゴ牌と同様に特殊処理を行います。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>めくった牌</th>
+      <th>処理</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1m</td>
+      <td>
+        5pをめくった場合と同様に、チップ獲得の有無を確認。
+        以降は1mを抜いている状態として進行。
+      </td>
+    </tr>
+    <tr>
+      <td>9m</td>
+      <td>
+        5sをめくった場合と同様に、チップ獲得の有無を確認。
+        以降は9mを抜いている状態として進行。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>7-5. オールマイティ牌の決定</h3>
+
+<p>
+少牌マイティーで使用するオールマイティ牌は、
+<strong>チューリップ開始前</strong>に決定します。
+</p>
+
+<div class="rule-box">
+  <span class="rule-title">決定方法</span>
+  和了できる形であれば、<strong>高め取りである必要はなし。</strong>
+</div>
+
+<div class="warning">
+  <span class="warning-title">決定タイミングに注意</span>
+  オールマイティ牌の決定は、
+  <strong>裏ドラを確認した後、チューリップ・確変・16Rの判定を開始する前</strong>
+  に行います。
+</div>
+
+
+<!-- ==================== 8. 確変 ==================== -->
+
+<h2 id="kakuhen">8. 確変</h2>
+
+<p>
+チューリップ対象の和了で、さらに<strong>7pまたは7sを3枚以上手牌で使用</strong>している場合、
+チューリップではなく<strong>確変</strong>として扱います。
+</p>
+
+<h3>8-1. 確変の発生条件</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>条件</th>
+      <th>必要条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>和了条件</td>
+      <td>チューリップ対象和了</td>
+    </tr>
+    <tr>
+      <td>牌の条件</td>
+      <td>7pまたは7sを3枚以上手牌で使用</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+「7pを3枚」または「7sを3枚」でも条件を満たします。
+<strong>7pと7sの両方を3枚ずつ</strong>使用している場合は、さらに上位の16Rになります。
+</p>
+
+
+<h3>8-2. 確変中のビンゴ</h3>
+
+<p>
+チューリップでは上段のみをめくりますが、
+確変では<strong>上下段の両方</strong>をめくります。
+</p>
+
+<div class="rule-box">
+  <span class="rule-title">確変の継続条件</span>
+  上段・下段のそれぞれについてビンゴ判定を行い、
+  <strong>どちらか一方でもチップを獲得できれば確変継続</strong>です。
+</div>
+
+<ul>
+  <li>チップを獲得できる → 確変継続</li>
+  <li>チップを獲得できない → 確変終了（転落）</li>
+  <li>突然確変 → 16Rへ昇格</li>
+</ul>
+
+<!-- ==================== 9. 16R ==================== -->
+
+<h2 id="16r">9. 16R</h2>
+
+<p>
+チューリップ対象の和了で、
+<strong>7pと7sをそれぞれ3枚以上手牌で使用</strong>している場合、
+<strong>16R</strong>が発生します。
+</p>
+
+<h3>9-1. 16Rの発生条件</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>条件</th>
+      <th>必要条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>和了条件</td>
+      <td>チューリップ対象和了</td>
+    </tr>
+    <tr>
+      <td>7p</td>
+      <td>3枚以上手牌で使用</td>
+    </tr>
+    <tr>
+      <td>7s</td>
+      <td>3枚以上手牌で使用</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="point">
+  <span class="point-title">確変との違い</span>
+  7pまたは7sのどちらか一方だけが3枚以上なら「確変」、
+  <strong>7pと7sの両方が3枚以上なら「16R」</strong>です。
+</div>
+
+
+<h3>9-2. 16R中のビンゴ</h3>
+
+<p>
+16Rでは、確変と同様に上下段の牌をめくります。
+</p>
+
+<ul>
+  <li>上下段のどちらかでチップを獲得 → 16R継続</li>
+  <li>どちらでもチップを獲得できない → 16R終了（転落）</li>
+  <li>突然確変 → ストック獲得</li>
+</ul>
+
+<h3>9-3. 16R中のチップ</h3>
+
+<p>
+16Rで獲得したチップ数は、<strong>通常の2倍</strong>になります。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>状態</th>
+      <th>チップ倍率</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>チューリップ</td>
+      <td>1倍</td>
+    </tr>
+    <tr>
+      <td>確変</td>
+      <td>1倍</td>
+    </tr>
+    <tr>
+      <td>16R</td>
+      <td><strong>2倍</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ==================== 10. 突然確変 ==================== -->
+
+<h2 id="sudden">10. 突然確変</h2>
+
+<p>
+1回のビンゴ判定で一定枚数以上のチップを獲得すると、
+通常の継続とは別に<strong>突然確変</strong>が発生します。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>現在の状態</th>
+      <th>突然確変の条件</th>
+      <th>移行先</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>チューリップ</td>
+      <td>1回で6枚以上のチップを獲得</td>
+      <td>確変</td>
+    </tr>
+    <tr>
+      <td>確変</td>
+      <td>1回で6枚以上のチップを獲得</td>
+      <td>16R</td>
+    </tr>
+    <tr>
+      <td>16R</td>
+      <td>1回で12枚のチップを獲得</td>
+      <td>ストック獲得</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="rule-box">
+  <span class="rule-title">昇格の流れ</span>
+  <strong>チューリップ → 確変 → 16R → ストック</strong>
+</div>
+
+<div class="warning">
+  <span class="warning-title">16Rの突然確変</span>
+  16R中は「6枚以上」ではなく、
+  <strong>1回で12枚のチップを獲得</strong>した場合にストックを獲得します。
+</div>
+
+
+<!-- ==================== 11. ストック ==================== -->
+
+<h2 id="stock">11. ストック（転落補償）</h2>
+
+<p>
+ストックは、ビンゴでの転落を1回だけ防ぐための<strong>転落補償</strong>です。
+複数個を保有できます。
+</p>
+
+<h3>11-1. ストックを獲得する方法</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>獲得契機</th>
+      <th>ストック</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>一発</td>
+      <td>獲得</td>
+    </tr>
+    <tr>
+      <td>役満（数え役満含む）</td>
+      <td>獲得</td>
+    </tr>
+    <tr>
+      <td>16R中の突然確変</td>
+      <td>獲得</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>11-2. ストックの使用</h3>
+
+<div class="rule-box">
+  <span class="rule-title">転落時の処理</span>
+  チューリップ・確変・16Rでチップを獲得できず、
+  本来なら転落する場合にストックを所持していれば、
+  <strong>ストックを1個消費して転落を回避し、継続</strong>します。
+</div>
+
+<ul>
+  <li>ストックは複数保有可能です。</li>
+  <li>転落するたびにストックを1個消費します。</li>
+  <li>ストックがなくなった状態でチップを獲得できなければ転落します。</li>
+</ul>
+
+
+<!-- ==================== 12. チップ ==================== -->
+
+<h2 id="chip">12. チップ</h2>
+
+<h3>12-1. チップの価値</h3>
+
+<div class="point">
+  <span class="point-title">基本単位</span>
+  <strong>チップ1枚 ＝ 1pt</strong>
+</div>
+
+<h3>12-2. チップの獲得対象</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>対象</th>
+      <th>獲得チップ</th>
+      <th>立直条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>赤ドラ</td>
+      <td>1枚</td>
+      <td>不要</td>
+    </tr>
+    <tr>
+      <td>金ドラ</td>
+      <td>2枚</td>
+      <td>不要</td>
+    </tr>
+    <tr>
+      <td>一発</td>
+      <td>1枚</td>
+      <td>必須</td>
+    </tr>
+    <tr>
+      <td>裏ドラ</td>
+      <td>裏ドラ1枚につき1枚</td>
+      <td>必須</td>
+    </tr>
+    <tr>
+      <td>チューリップ・確変</td>
+      <td>対象1枚につき1枚</td>
+      <td>必須</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <span class="note-title">チューリップ・確変のチップ</span>
+  チューリップ・確変では、ビンゴ判定によって該当した牌1枚につき1枚のチップを獲得します。
+  ただし、確変・16Rでは状態に応じた倍率が適用されます。
+</div>
+
+
+<!-- ==================== 13. スコア ==================== -->
+
+<h2 id="score">13. スコア</h2>
+
+<h3>13-1. 通常の順位点</h3>
+
+<p>
+2着の最終点数を基準として順位点を決定します。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>2着の点数</th>
+      <th>1着</th>
+      <th>2着</th>
+      <th>3着</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>40,000点以上</strong></td>
+      <td>+20pt</td>
+      <td>±0pt</td>
+      <td>-20pt</td>
+    </tr>
+    <tr>
+      <td><strong>40,000点未満</strong></td>
+      <td>+30pt</td>
+      <td>-10pt</td>
+      <td>-20pt</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="point">
+  <span class="point-title">判定方法</span>
+  まず2着の最終点数を確認し、
+  <strong>40,000点以上か、40,000点未満か</strong>で順位点の表を選択します。
+</div>
+
+
+<h3>13-2. トビ賞</h3>
+
+<p>
+誰かが0点未満となりトビ終了した場合、
+<strong>トップから10pt</strong>をトビ者へ支払います。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>処理</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>トビ賞</td>
+      <td>トップ → トビ者へ10pt</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>13-3. 役満祝儀</h3>
+
+<div class="rule-box">
+  <span class="rule-title">役満祝儀</span>
+  <strong>1役満につき場に100pt</strong>
+</div>
+
+<p>
+ダブル役満は2役満として扱うため、
+1回の和了で2役満となる場合は<strong>200pt</strong>となります。
+</p>
+
+
+<!-- ==================== 14. 役 ==================== -->
+
+<h2 id="yaku">14. 役・役満</h2>
+
+<p>
+本ゲームでは通常の麻雀役に加えて、特殊役・ローカル役を採用しています。
+</p>
+
+
+<h3>14-1. 特殊役（役満未満）</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>役</th>
+      <th>翻数</th>
+      <th>鳴き</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4枚使い七対子</td>
+      <td>4役</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>6枚使い七対子</td>
+      <td>4役</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>人和</td>
+      <td>倍満</td>
+      <td>不可</td>
+      <td>ローカル役</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>14-2. 役満</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>役</th>
+      <th>役満数</th>
+      <th>鳴き</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>オープン立直</td>
+      <td>1役満</td>
+      <td>不可</td>
+      <td>リーチ者以外が振り込んだ場合</td>
+    </tr>
+    <tr>
+      <td>天和</td>
+      <td>1役満</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>地和</td>
+      <td>1役満</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>九連</td>
+      <td>1役満</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>国士無双</td>
+      <td>1役満</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>大七星</td>
+      <td>1役満</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>緑一色</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>四槓子</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>大三元</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>パオ対象</td>
+    </tr>
+    <tr>
+      <td>字一色</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>小四喜</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>清老頭</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>大車輪</td>
+      <td>1役満</td>
+      <td>不可</td>
+      <td>ローカル役</td>
+    </tr>
+    <tr>
+      <td>四連刻</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>ローカル役</td>
+    </tr>
+    <tr>
+      <td>紅孔雀</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>ローカル役</td>
+    </tr>
+    <tr>
+      <td>萬混一</td>
+      <td>1役満</td>
+      <td>可</td>
+      <td>ローカル役</td>
+    </tr>
+    <tr>
+      <td>四暗刻単騎</td>
+      <td>2役満</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>純正九連</td>
+      <td>2役満</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>国士無双13面</td>
+      <td>2役満</td>
+      <td>不可</td>
+      <td>―</td>
+    </tr>
+    <tr>
+      <td>大四喜</td>
+      <td>2役満</td>
+      <td>可</td>
+      <td>パオ対象</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>14-3. 役満とパオ</h3>
+
+<div class="warning">
+  <span class="warning-title">パオ対象の役満</span>
+  以下の役満はパオの対象です。
+  <strong>大三元・四槓子・大四喜</strong>
+</div>
+
+
+<h3>14-4. 役満祝儀との関係</h3>
+
+<p>
+役満は1役満につき場に100ptの祝儀が発生します。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>役満数</th>
+      <th>役満祝儀</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1役満</td>
+      <td>100pt</td>
+    </tr>
+    <tr>
+      <td>2役満</td>
+      <td>200pt</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ==================== 15. 早見表 ==================== -->
+
+<h2 id="summary">15. 特殊システム早見表</h2>
+
+<h3>15-1. ビンゴ状態の昇格</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>状態</th>
+      <th>発生条件</th>
+      <th>めくる場所</th>
+      <th>転落条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>チューリップ</strong></td>
+      <td>
+        立直・天和・地和・人和で和了
+      </td>
+      <td>上段</td>
+      <td>チップ獲得なし</td>
+    </tr>
+    <tr>
+      <td><strong>確変</strong></td>
+      <td>
+        チューリップ対象和了<br>
+        ＋7pまたは7sを3枚以上
+      </td>
+      <td>上下段</td>
+      <td>上下段ともチップ獲得なし</td>
+    </tr>
+    <tr>
+      <td><strong>16R</strong></td>
+      <td>
+        チューリップ対象和了<br>
+        ＋7p・7sをそれぞれ3枚以上
+      </td>
+      <td>上下段</td>
+      <td>上下段ともチップ獲得なし</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>15-2. 突然確変・ストック早見表</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>現在の状態</th>
+      <th>条件</th>
+      <th>結果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>チューリップ</td>
+      <td>1回で6枚以上獲得</td>
+      <td>確変へ昇格</td>
+    </tr>
+    <tr>
+      <td>確変</td>
+      <td>1回で6枚以上獲得</td>
+      <td>16Rへ昇格</td>
+    </tr>
+    <tr>
+      <td>16R</td>
+      <td>1回で12枚獲得</td>
+      <td>ストック獲得</td>
+    </tr>
+    <tr>
+      <td>通常</td>
+      <td>一発・役満（数え役満含む）</td>
+      <td>ストック獲得</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>15-3. チップ倍率早見表</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>状態</th>
+      <th>倍率</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>通常のチップ</td>
+      <td>1倍</td>
+    </tr>
+    <tr>
+      <td>チューリップ</td>
+      <td>1倍</td>
+    </tr>
+    <tr>
+      <td>確変</td>
+      <td>1倍</td>
+    </tr>
+    <tr>
+      <td>16R</td>
+      <td>2倍</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2 id="flow">16. 1局の進行イメージ</h2>
+
+<div class="rule-box">
+  <span class="rule-title">基本的な進行</span>
+
+  <ol>
+    <li>少牌状態で配牌する。</li>
+    <li>少牌の状態で通常通りゲームを進行する。</li>
+    <li>必要に応じて抜き牌・カンを行う。</li>
+    <li>立直・天和・地和・人和などのチューリップ対象和了が発生した場合、通常の点棒清算を行う。</li>
+    <li>必要に応じて裏ドラを確認する。</li>
+    <li>チューリップ開始前にオールマイティ牌を決定する。</li>
+    <li>ビンゴ判定を行う。</li>
+    <li>チップを獲得できれば、チューリップ・確変・16Rを継続する。</li>
+    <li>条件を満たせば上位状態へ昇格する。</li>
+    <li>転落時にストックがあれば1個消費して継続する。</li>
+    <li>ストックがなければビンゴ状態を終了する。</li>
+  </ol>
+</div>
+
+
+<h2 id="final-notes">17. ルール上の重要ポイント</h2>
+
+<div class="note">
+  <span class="note-title">① 少牌マイティー</span>
+  常に1枚少ない手牌で進行し、足りない1枚をオールマイティとして扱います。
+</div>
+
+<div class="note">
+  <span class="note-title">② 5p・5sは各6枚</span>
+  赤5・金5を含め、5p・5sは通常より多く存在します。
+</div>
+
+<div class="note">
+  <span class="note-title">③ 1m・9mはビンゴ牌</span>
+  抜き牌として使用できるほか、ビンゴシステムにも関係します。
+</div>
+
+<div class="note">
+  <span class="note-title">④ カンは5枚目以降も可能</span>
+  四槓子散了はなく、牌山が残っている限りカンできます。
+</div>
+
+<div class="note">
+  <span class="note-title">⑤ チューリップから16Rまで昇格</span>
+  ビンゴでチップを獲得し続けることで、
+  <strong>チューリップ → 確変 → 16R</strong>と状態が上昇します。
+</div>
+
+<div class="note">
+  <span class="note-title">⑥ ストックは転落補償</span>
+  ストックを持っていれば、ビンゴ失敗時の転落を1回防ぐことができます。
+</div>
+
+<footer>
+  パチンコ（少牌確変チューリップ） 特殊麻雀ルールブック
+</footer>
+
+</div>
+
+</body>
+</html>
 
