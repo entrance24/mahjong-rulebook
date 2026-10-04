@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ぶっトビウオ ルールブック</title>
+
+  <style>
+    :root {
+      --bg: #f5f7f8;
+      --card: #ffffff;
+      --text: #263238;
+      --sub: #607d8b;
+      --line: #cfd8dc;
+
+      --primary: #1565c0;
+      --primary-light: #e3f2fd;
+
+      --special: #6a1b9a;
+      --special-light: #f3e5f5;
+
+      --danger: #c62828;
+      --danger-light: #ffebee;
+
+      --warning: #ef6c00;
+      --warning-light: #fff3e0;
+
+      --green: #2e7d32;
+      --green-light: #e8f5e9;
+
+      --gold: #b8860b;
+      --gold-light: #fff8e1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Yu Gothic",
+        "YuGothic",
+        Meiryo,
+        sans-serif;
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d47a1, #1976d2);
+      color: #fff;
+      border-radius: 18px;
+      padding: 34px 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+    }
+
+    header p {
+      margin: 0;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 30px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+      font-size: 1.15rem;
+    }
+
+    nav ol {
+      margin: 0;
+      padding-left: 1.5rem;
+      columns: 2;
+    }
+
+    nav li {
+      margin: 5px 0;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 42px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      padding: 12px 16px;
+      border-left: 6px solid var(--primary);
+      background: var(--primary-light);
+      border-radius: 0 10px 10px 0;
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      margin: 28px 0 12px;
+      font-size: 1.15rem;
+      color: #37474f;
+    }
+
+    h4 {
+      margin: 20px 0 8px;
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 8px 0 14px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+    }
+
+    .important,
+    .special,
+    .notice,
+    .danger,
+    .success {
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 16px 0;
+    }
+
+    .important {
+      background: var(--warning-light);
+      border-left: 5px solid var(--warning);
+    }
+
+    .special {
+      background: var(--special-light);
+      border-left: 5px solid var(--special);
+    }
+
+    .notice {
+      background: var(--primary-light);
+      border-left: 5px solid var(--primary);
+    }
+
+    .danger {
+      background: var(--danger-light);
+      border-left: 5px solid var(--danger);
+    }
+
+    .success {
+      background: var(--green-light);
+      border-left: 5px solid var(--green);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 22px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+
+    th,
+    td {
+      padding: 11px 13px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    th {
+      background: #eceff1;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .badge-blue {
+      color: #0d47a1;
+      background: #e3f2fd;
+    }
+
+    .badge-purple {
+      color: #6a1b9a;
+      background: #f3e5f5;
+    }
+
+    .badge-red {
+      color: #b71c1c;
+      background: #ffebee;
+    }
+
+    .badge-green {
+      color: #1b5e20;
+      background: #e8f5e9;
+    }
+
+    .badge-gold {
+      color: #795548;
+      background: #fff8e1;
+    }
+
+    .formula {
+      background: #263238;
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: 12px;
+      font-family: monospace;
+      line-height: 1.9;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .flow-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      position: relative;
+    }
+
+    .flow-card .number {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .flow-card strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .card h4 {
+      margin-top: 0;
+    }
+
+    .card .big {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 4px 0;
+    }
+
+    .red-card {
+      border-top: 5px solid #d32f2f;
+    }
+
+    .blue-card {
+      border-top: 5px solid #1976d2;
+    }
+
+    .green-card {
+      border-top: 5px solid #388e3c;
+    }
+
+    .purple-card {
+      border-top: 5px solid #8e24aa;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    code {
+      background: #eceff1;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-family: monospace;
+    }
+
+    .yakuman-1 {
+      color: #b71c1c;
+      font-weight: 800;
+    }
+
+    .yakuman-2 {
+      color: #6a1b9a;
+      font-weight: 800;
+    }
+
+    .chip {
+      color: #795548;
+      font-weight: 800;
+    }
+
+    .multiplier {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1565c0;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 24px 0;
+      color: var(--sub);
+      text-align: center;
+      border-top: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 16px 12px 40px;
+      }
+
+      header {
+        padding: 26px 20px;
+      }
+
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      nav ol {
+        columns: 1;
+      }
+
+      .flow,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      th,
+      td {
+        padding: 9px 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- ==================== HEADER ==================== -->
+
+  <header>
+    <h1>ぶっトビウオ ルールブック</h1>
+    <p>
+      三人麻雀をベースに、少牌マイティー・修羅場・満塁ホームラン・
+      チップ倍率などを組み合わせた特殊麻雀ルール
+    </p>
+  </header>
+
+  <!-- ==================== 目次 ==================== -->
+
+  <nav>
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#tiles">牌構成</a></li>
+      <li><a href="#basic">基本ルール</a></li>
+      <li><a href="#riichi">立直</a></li>
+      <li><a href="#maity">少牌マイティー</a></li>
+      <li><a href="#shuraba">修羅場</a></li>
+      <li><a href="#manrui">満塁ホームラン</a></li>
+      <li><a href="#nuki">抜き牌</a></li>
+      <li><a href="#chips">チップ</a></li>
+      <li><a href="#score">スコア</a></li>
+      <li><a href="#chonbo">チョンボ</a></li>
+      <li><a href="#yakuman">役・役満</a></li>
+      <li><a href="#flow">1局の進行</a></li>
+      <li><a href="#summary">重要ポイント早見表</a></li>
+    </ol>
+  </nav>
+
+
+  <!-- ==================== 1. 牌構成 ==================== -->
+
+  <section id="tiles">
+    <h2>1. 牌構成</h2>
+
+    <div class="special">
+      <strong>基本構成</strong>
+      <p>
+        本ルールでは、花牌を使用しない三人麻雀と同じ
+        <strong>108枚</strong>を使用します。
+      </p>
+    </div>
+
+    <h3>1-1. 赤ドラ</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>牌</th>
+            <th>枚数</th>
+            <th>扱い</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>赤5p</strong></td>
+            <td class="center">1枚</td>
+            <td><span class="badge badge-red">ドラ1</span></td>
+          </tr>
+          <tr>
+            <td><strong>赤5s</strong></td>
+            <td class="center">1枚</td>
+            <td><span class="badge badge-red">ドラ1</span></td>
+          </tr>
+          <tr>
+            <td><strong>合計</strong></td>
+            <td class="center"><strong>2枚</strong></td>
+            <td>いずれもチップ対象</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="notice">
+      <strong>📌 牌構成のポイント</strong>
+      <p>
+        赤5p・赤5sはそれぞれ1枚ずつ採用し、どちらもドラ1として扱います。
+        それ以外の牌構成は、花牌を使用しない通常の三人麻雀と同じです。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== 2. 基本ルール ==================== -->
+
+  <section id="basic">
+    <h2>2. 基本ルール</h2>
+
+    <h3>2-1. ゲーム形式</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>ルール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>人数</td>
+            <td><strong>三人麻雀</strong></td>
+          </tr>
+          <tr>
+            <td>場</td>
+            <td><strong>永久東場</strong></td>
+          </tr>
+          <tr>
+            <td>持ち点</td>
+            <td><strong>20,000点持ち・20,000点返し</strong></td>
+          </tr>
+          <tr>
+            <td>ツモ</td>
+            <td><strong>ツモ損あり</strong></td>
+          </tr>
+          <tr>
+            <td>終局条件</td>
+            <td><strong>誰かがトブまで</strong></td>
+          </tr>
+          <tr>
+            <td>0点</td>
+            <td>継続</td>
+          </tr>
+          <tr>
+            <td>1,000点未満</td>
+            <td>立直不可</td>
+          </tr>
+          <tr>
+            <td>喰いタン</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>後付け</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>ダブロン</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>フリテン立直</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>鳴き状態での立直</td>
+            <td><strong>あり（0役）</strong></td>
+          </tr>
+          <tr>
+            <td>チップ</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>役満祝儀</td>
+            <td>あり</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>2-2. 親の決定</h3>
+
+    <div class="important">
+      <strong>永久東場</strong>
+      <p>
+        東場が終了して南場へ移行する通常の進行はありません。
+        ゲーム終了まで東場として進行します。
+      </p>
+    </div>
+
+    <ul>
+      <li><strong>起家は持ち回り</strong>で決定します。</li>
+      <li>以降は<strong>和了者が次局の親</strong>になります。</li>
+      <li>ダブロンの場合は<strong>上家の和了者が親</strong>になります。</li>
+    </ul>
+
+
+    <h3>2-3. ダブロン</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>処理</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ダブロン</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>供託</td>
+            <td><strong>上家取り</strong></td>
+          </tr>
+          <tr>
+            <td>次局の親</td>
+            <td><strong>上家の和了者</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>2-4. 流局・局の進行</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>ルール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>九種九牌</td>
+            <td>
+              あり。<strong>親継続＋修羅場進行</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>四槓子散了</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>ドラ表示牌</td>
+            <td>
+              <strong>ドラ表示牌の隣までツモりきる</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>終局時の供託</td>
+            <td><strong>トップ取り</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>2-5. カン・責任払い・パオ</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>ルール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>暗カンのドラ</td>
+            <td><strong>即乗り</strong></td>
+          </tr>
+          <tr>
+            <td>明カンのドラ</td>
+            <td><strong>後乗り</strong></td>
+          </tr>
+          <tr>
+            <td>明カンの責任払い</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>パオ</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>パオ対象</td>
+            <td>大三元・四槓子・大四喜</td>
+          </tr>
+          <tr>
+            <td>国士無双の暗カンロン</td>
+            <td>あり</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>2-6. その他の基本ルール</h3>
+
+    <div class="cards">
+
+      <div class="card blue-card">
+        <h4>少牌マイティー</h4>
+        <span class="big">採用</span>
+        <p>
+          常に1枚少ない手牌で進行し、不足する1枚をオールマイティとして扱います。
+        </p>
+      </div>
+
+      <div class="card purple-card">
+        <h4>修羅場</h4>
+        <span class="big">採用</span>
+        <p>
+          本場のように局をまたいで累積する特殊ルールです。
+        </p>
+      </div>
+
+      <div class="card red-card">
+        <h4>満塁ホームラン</h4>
+        <span class="big">採用</span>
+        <p>
+          プレイヤーごとに「満塁」「ホームラン」の状態を管理します。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== 3. 立直 ==================== -->
+
+  <section id="riichi">
+    <h2>3. 立直</h2>
+
+    <div class="special">
+      <strong>立直の基本</strong>
+      <p>
+        本ルールでは、<strong>門前での通常立直</strong>に加えて、
+        <strong>鳴き状態での立直</strong>および
+        <strong>オープン立直</strong>を採用します。
+      </p>
+    </div>
+
+    <h3>3-1. 立直</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>状態</th>
+            <th>役数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>メンゼン</strong></td>
+            <td><span class="badge badge-blue">1役</span></td>
+          </tr>
+          <tr>
+            <td><strong>鳴き</strong></td>
+            <td><span class="badge badge-gold">0役</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="notice">
+      <strong>📌 鳴き立直</strong>
+      <p>
+        鳴き状態でも立直を宣言することができます。
+        この場合、立直そのものによる役数は<strong>0役</strong>です。
+      </p>
+    </div>
+
+
+    <h3>3-2. オープン立直</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>状態</th>
+            <th>役数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>メンゼン</strong></td>
+            <td><span class="badge badge-purple">2役</span></td>
+          </tr>
+          <tr>
+            <td><strong>鳴き</strong></td>
+            <td><span class="badge badge-blue">1役</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="special">
+      <strong>オープン立直の扱い</strong>
+      <p>
+        オープン立直は、通常の立直よりも高い役数を持ちます。
+        メンゼンでは<strong>2役</strong>、鳴き状態では<strong>1役</strong>です。
+      </p>
+    </div>
+
+
+    <h3>3-3. 鳴き立直と裏ドラ</h3>
+
+    <div class="important">
+      <strong>鳴き立直でも裏ドラを確認可能</strong>
+      <p>
+        鳴き状態で立直した場合でも、和了時には
+        <strong>裏ドラを確認することができます。</strong>
+      </p>
+      <p>
+        裏ドラによるチップについても、通常の立直と同様に
+        <strong>裏ドラ1枚につき1枚</strong>のチップ対象とします。
+      </p>
+    </div>
+
+
+    <h3>3-4. 立直に関する共通ルール</h3>
+
+    <ul>
+      <li><strong>1,000点未満</strong>では立直できません。</li>
+      <li><strong>フリテン立直</strong>は可能です。</li>
+      <li>鳴き状態でも立直・オープン立直を宣言できます。</li>
+      <li>鳴き立直でも<strong>一発</strong>のチップ対象となります。</li>
+      <li>鳴き立直でも<strong>裏ドラ</strong>を確認できます。</li>
+    </ul>
+
+    <div class="notice">
+      <strong>立直の役数早見表</strong>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>立直の種類</th>
+              <th>メンゼン</th>
+              <th>鳴き</th>
+              <th>裏ドラ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>通常立直</strong></td>
+              <td><span class="badge badge-blue">1役</span></td>
+              <td><span class="badge badge-gold">0役</span></td>
+              <td>確認可能</td>
+            </tr>
+            <tr>
+              <td><strong>オープン立直</strong></td>
+              <td><span class="badge badge-purple">2役</span></td>
+              <td><span class="badge badge-blue">1役</span></td>
+              <td>確認可能</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== 4. 少牌マイティー ==================== -->
+
+  <section id="maity">
+    <h2>4. 少牌マイティー</h2>
+
+    <div class="special">
+      <strong>少牌マイティーとは</strong>
+      <p>
+        通常の麻雀より<strong>常に1枚少ない手牌</strong>でゲームを進行し、
+        足りない1枚を<strong>オールマイティ</strong>として扱う特殊ルールです。
+      </p>
+    </div>
+
+    <h3>4-1. 配牌枚数</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>プレイヤー</th>
+            <th>通常の配牌</th>
+            <th>本ルール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>親</td>
+            <td>14枚</td>
+            <td><strong>13枚</strong></td>
+          </tr>
+          <tr>
+            <td>子</td>
+            <td>13枚</td>
+            <td><strong>12枚</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      配牌後だけでなく、ゲーム中も常に1枚足りない状態で進行します。
+    </p>
+
+
+    <h3>4-2. オールマイティ牌</h3>
+
+    <ul>
+      <li>不足している1枚は、常にオールマイティとして扱います。</li>
+      <li>実際には存在しない牌でも指定できます。</li>
+      <li>例えば<strong>「5枚目の4s」</strong>のような牌でも構いません。</li>
+      <li>オールマイティ牌を使用した<strong>鳴きはできません</strong>。</li>
+      <li>オールマイティ牌を使用した<strong>暗カンはできません</strong>。</li>
+    </ul>
+
+    <div class="notice">
+      <strong>📌 ポイント</strong>
+      <p>
+        オールマイティは「実際に手牌へ存在する特殊な1枚」として扱います。
+        ただし、鳴きや暗カンには使用できません。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== 5. 修羅場 ==================== -->
+
+  <section id="shuraba">
+    <h2>5. 修羅場</h2>
+
+    <div class="special">
+      <strong>修羅場とは</strong>
+      <p>
+        通常の本場と異なり、<strong>親の交代ではリセットされない</strong>
+        本場のような累積システムです。
+      </p>
+    </div>
+
+    <h3>5-1. 修羅場の増加</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>局</th>
+            <th>修羅場</th>
+            <th>追加支払い</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1局目</td>
+            <td>0本場相当</td>
+            <td>0点</td>
+          </tr>
+          <tr>
+            <td>2局目</td>
+            <td>1本場相当</td>
+            <td>2,000点</td>
+          </tr>
+          <tr>
+            <td>3局目</td>
+            <td>2本場相当</td>
+            <td>4,000点</td>
+          </tr>
+          <tr>
+            <td>4局目</td>
+            <td>3本場相当</td>
+            <td><strong>6,000点</strong></td>
+          </tr>
+          <tr>
+            <td>5局目</td>
+            <td>4本場相当</td>
+            <td><strong>8,000点</strong></td>
+          </tr>
+          <tr>
+            <td>以降</td>
+            <td colspan="2">
+              局が進むごとに2,000点ずつ増加
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="important">
+      <strong>⚠️ 親が変わってもリセットしない</strong>
+      <p>
+        例えば4局目で親が変わった場合でも、次局は修羅場がリセットされず、
+        <strong>8,000点</strong>の状態から続行します。
+      </p>
+    </div>
+
+    <p>
+      修羅場はゲーム終了まで継続し、局が進むたびに増加します。
+    </p>
+  </section>
+
+
+  <!-- ==================== 6. 満塁ホームラン ==================== -->
+
+  <section id="manrui">
+    <h2>6. 満塁ホームラン</h2>
+
+    <div class="special">
+      <strong>満塁ホームランとは</strong>
+      <p>
+        各プレイヤーが「満塁状態」または「ホームラン状態」のどちらかを持ち、
+        和了による点棒の移動に応じて状態が変化する特殊ルールです。
+      </p>
+    </div>
+
+    <h3>6-1. ゲーム開始時</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>プレイヤー</th>
+            <th>開始状態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>親</td>
+            <td><span class="badge badge-red">ホームラン</span></td>
+          </tr>
+          <tr>
+            <td>子</td>
+            <td><span class="badge badge-gold">満塁</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>6-2. 状態の変化</h3>
+
+    <div class="flow">
+
+      <div class="flow-card">
+        <span class="number">①</span>
+        <strong>点数を支払う</strong>
+        <p>
+          ツモ・ロンなどで点数を支払ったプレイヤーは
+          <strong>満塁状態</strong>になる。
+        </p>
+      </div>
+
+      <div class="flow-card">
+        <span class="number">②</span>
+        <strong>点数を獲得する</strong>
+        <p>
+          ツモ・ロンなどで点数を獲得したプレイヤーは
+          <strong>ホームラン状態</strong>になる。
+        </p>
+      </div>
+
+      <div class="flow-card">
+        <span class="number">③</span>
+        <strong>局を清算する</strong>
+        <p>
+          その局の点棒清算が終わったタイミングで、
+          各プレイヤーの状態を更新する。
+        </p>
+      </div>
+
+    </div>
+
+
+    <h3>6-3. 満塁状態でトビが発生した場合</h3>
+
+    <div class="important">
+      <strong>満塁状態のプレイヤーがトんだ場合</strong>
+      <p>
+        ホームラン状態のプレイヤーへ支払うチップが
+        <strong>2倍</strong>になります。
+      </p>
+    </div>
+
+    <h3>6-4. 満塁同士のトビ</h3>
+
+    <p>
+      満塁状態のプレイヤーが、別の満塁状態のプレイヤーをトバした場合は、
+      <strong>通常どおり等倍</strong>です。
+    </p>
+
+    <div class="notice">
+      <strong>📌 状態変更のタイミング</strong>
+      <p>
+        状態は点棒が動くたびに即時変更するのではなく、
+        <strong>その局の清算がすべて終了したタイミング</strong>で変更します。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== 7. 抜き牌 ==================== -->
+
+  <section id="nuki">
+    <h2>7. 抜き牌</h2>
+
+    <div class="special">
+      <strong>抜き牌の対象</strong>
+      <p>
+        <strong>1m・9m・北</strong>を抜き牌として使用します。
+        いずれも<strong>ドラ1</strong>として扱います。
+      </p>
+    </div>
+
+    <h3>7-1. 抜き牌一覧</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>牌</th>
+            <th>ドラ</th>
+            <th>河への捨て</th>
+            <th>ポン・カン・ロン</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1m</strong></td>
+            <td>ドラ1</td>
+            <td>不可</td>
+            <td>可能</td>
+          </tr>
+          <tr>
+            <td><strong>9m</strong></td>
+            <td>ドラ1</td>
+            <td>不可</td>
+            <td>可能</td>
+          </tr>
+          <tr>
+            <td><strong>北</strong></td>
+            <td>ドラ1</td>
+            <td>不可</td>
+            <td>可能</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>7-2. 抜いた直後のツモ和了</h3>
+
+    <div class="notice">
+      <strong>嶺上開花扱い</strong>
+      <p>
+        抜き牌を抜いた直後のツモで和了した場合、
+        その和了は<strong>嶺上開花</strong>として扱います。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== 8. チップ ==================== -->
+
+  <section id="chips">
+    <h2>8. チップ</h2>
+
+    <h3>8-1. チップの価値</h3>
+
+    <div class="cards">
+      <div class="card blue-card">
+        <h4>基本単位</h4>
+        <span class="big">1枚 = 1pt</span>
+        <p>チップ1枚を1ptとして計算します。</p>
+      </div>
+    </div>
+
+
+    <h3>8-2. チップ獲得対象</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>対象</th>
+            <th>チップ</th>
+            <th>立直</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>赤ドラ</strong></td>
+            <td><span class="chip">1枚</span></td>
+            <td>不要</td>
+          </tr>
+          <tr>
+            <td><strong>一発</strong></td>
+            <td><span class="chip">1枚</span></td>
+            <td>必要</td>
+          </tr>
+          <tr>
+            <td><strong>裏ドラ</strong></td>
+            <td><span class="chip">1枚／裏ドラ1枚</span></td>
+            <td>必要</td>
+          </tr>
+          <tr>
+            <td><strong>抜き牌</strong></td>
+            <td><span class="chip">1枚</span></td>
+            <td>不要</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>8-3. トビ賞</h3>
+
+    <div class="important">
+      <strong>箱下トビ賞</strong>
+      <p>
+        箱下<strong>12,000点</strong>の場合、
+        <strong>-12枚</strong>のチップとなります。
+      </p>
+    </div>
+
+
+    <h3>8-4. チップ倍率</h3>
+
+    <div class="special">
+      <strong>最大8倍</strong>
+      <p>
+        以下の条件を満たした場合、倍率は<strong>満たした条件数 × 2</strong>となります。
+        最終倍率は<strong>最大8倍</strong>です。
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>条件</th>
+            <th>加算</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ホームラン状態での和了</td>
+            <td><strong>×2</strong></td>
+          </tr>
+          <tr>
+            <td>満塁状態の他家をトバした和了</td>
+            <td><strong>×2</strong></td>
+          </tr>
+          <tr>
+            <td>立直一発の和了</td>
+            <td><strong>×2</strong></td>
+          </tr>
+          <tr>
+            <td>（数え）役満以上の和了</td>
+            <td><strong>×2</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="notice">
+      <strong>倍率計算例</strong>
+      <p>
+        「ホームラン状態での和了」と「立直一発」「役満和了」が該当する場合、
+        <strong>3 × 2 = 6倍</strong>となります。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== 9. スコア ==================== -->
+
+  <section id="score">
+    <h2>9. スコア</h2>
+
+    <h3>9-1. 順位点</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>順位</th>
+            <th>スコア</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1着</strong></td>
+            <td><span class="badge badge-green">+10pt</span></td>
+          </tr>
+          <tr>
+            <td><strong>2着</strong></td>
+            <td>±0pt</td>
+          </tr>
+          <tr>
+            <td><strong>3着</strong></td>
+            <td><span class="badge badge-red">-10pt</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>9-2. トビ賞</h3>
+
+    <div class="notice">
+      <strong>トップへ10pt</strong>
+      <p>
+        トビが発生した場合、<strong>トビ者からトップへ10pt</strong>を支払います。
+      </p>
+    </div>
+
+
+    <h3>9-3. 役満祝儀</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>役満数</th>
+            <th>場に出る祝儀</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1役満</td>
+            <td><strong>100pt</strong></td>
+          </tr>
+          <tr>
+            <td>2役満</td>
+            <td><strong>200pt</strong></td>
+          </tr>
+          <tr>
+            <td>3役満</td>
+            <td><strong>300pt</strong></td>
+          </tr>
+          <tr>
+            <td>以降</td>
+            <td><strong>1役満につき100pt追加</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ==================== 10. チョンボ ==================== -->
+
+  <section id="chonbo">
+    <h2>10. チョンボ</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ケース</th>
+            <th>処理</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>通常のチョンボ</td>
+            <td><strong>フリテン扱い</strong></td>
+          </tr>
+          <tr>
+            <td>リーチ後、待ちが変わる暗カン</td>
+            <td><strong>チョンボ・フリテン扱い</strong></td>
+          </tr>
+          <tr>
+            <td>誤ロンによる手牌晒し</td>
+            <td><strong>その局中はオープン扱い</strong></td>
+          </tr>
+          <tr>
+            <td>誤ツモによる手牌晒し</td>
+            <td><strong>その局中はオープン扱い</strong></td>
+          </tr>
+          <tr>
+            <td>その他</td>
+            <td>当事者同士で決定</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="danger">
+      <strong>⚠️ リーチ後の暗カン</strong>
+      <p>
+        リーチ後に暗カンを行い、その結果として待ちが変わる場合は
+        <strong>チョンボ</strong>とします。
+        この場合はフリテン扱いです。
+      </p>
+    </div>
+
+    <div class="notice">
+      <strong>誤ロン・誤ツモ</strong>
+      <p>
+        誤ロンまたは誤ツモによって手牌を晒してしまった場合、
+        その局が終了するまで手牌は<strong>オープン扱い</strong>となります。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== 11. 役・役満 ==================== -->
+
+  <section id="yakuman">
+    <h2>11. 役・役満</h2>
+
+    <div class="special">
+      <strong>役の基本</strong>
+      <p>
+        通常の麻雀役に加えて、特殊役・ローカル役を採用します。
+        特に役満については、通常の役満とは異なる倍率設定があります。
+      </p>
+    </div>
+
+
+    <h3>11-1. 特殊役（役満未満）</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>役</th>
+            <th>役数</th>
+            <th>鳴き</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>4枚使い七対子</strong></td>
+            <td><strong>2役</strong></td>
+            <td>不可</td>
+            <td>特殊役</td>
+          </tr>
+          <tr>
+            <td><strong>人和</strong></td>
+            <td><strong>倍満</strong></td>
+            <td>不可</td>
+            <td>ローカル役</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3>11-2. 役満</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>役</th>
+            <th>役満数</th>
+            <th>鳴き</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><strong>オープン立直振込</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>―</td>
+            <td>
+              オープン立直者以外の非立直者が放銃した場合
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>天和</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>不可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>地和</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>不可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>九連</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>不可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>国士無双</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>不可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>大七星</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>不可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>緑一色</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>四槓子</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td>パオ対象</td>
+          </tr>
+
+          <tr>
+            <td><strong>大三元</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td>パオ対象</td>
+          </tr>
+
+          <tr>
+            <td><strong>字一色</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>小四喜</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>清老頭</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>大車輪</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>不可</td>
+            <td>ローカル役</td>
+          </tr>
+
+          <tr>
+            <td><strong>四連刻</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td>ローカル役</td>
+          </tr>
+
+          <tr>
+            <td><strong>紅孔雀</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td>ローカル役</td>
+          </tr>
+
+          <tr>
+            <td><strong>萬混一</strong></td>
+            <td class="yakuman-1">1役満</td>
+            <td>可</td>
+            <td>ローカル役</td>
+          </tr>
+
+          <tr>
+            <td><strong>四暗刻単騎</strong></td>
+            <td class="yakuman-2">2役満</td>
+            <td>不可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>純正九連</strong></td>
+            <td class="yakuman-2">2役満</td>
+            <td>不可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>国士無双13面</strong></td>
+            <td class="yakuman-2">2役満</td>
+            <td>不可</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>大四喜</strong></td>
+            <td class="yakuman-2">2役満</td>
+            <td>可</td>
+            <td>パオ対象</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="important">
+      <strong>⚠️ オープン立直とオープン立直振込の区別</strong>
+      <p>
+        <strong>オープン立直そのものは2役（メンゼン）または1役（鳴き）</strong>です。
+        そのうえで、オープン立直者に対して非立直者が放銃した場合は、
+        <strong>オープン立直振込として1役満</strong>を適用します。
+      </p>
+    </div>
+
+
+    <h3>11-3. パオ</h3>
+
+    <div class="important">
+      <strong>パオ対象</strong>
+      <p>
+        以下の役満にはパオを適用します。
+      </p>
+
+      <ul>
+        <li><strong>大三元</strong></li>
+        <li><strong>四槓子</strong></li>
+        <li><strong>大四喜</strong></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ==================== 12. 1局の進行 ==================== -->
+
+  <section id="flow">
+    <h2>12. 1局の進行イメージ</h2>
+
+    <div class="flow">
+
+      <div class="flow-card">
+        <span class="number">1</span>
+        <strong>配牌</strong>
+        <p>
+          親13枚、子12枚で配牌します。
+        </p>
+      </div>
+
+      <div class="flow-card">
+        <span class="number">2</span>
+        <strong>通常進行</strong>
+        <p>
+          不足する1枚をオールマイティとして扱いながら進行します。
+        </p>
+      </div>
+
+      <div class="flow-card">
+        <span class="number">3</span>
+        <strong>抜き牌・カン</strong>
+        <p>
+          必要に応じて抜き牌やカンを行います。
+        </p>
+      </div>
+
+      <div class="flow-card">
+        <span class="number">4</span>
+        <strong>立直</strong>
+        <p>
+          メンゼン・鳴き・オープン立直を、
+          それぞれの役数に従って適用します。
+        </p>
+      </div>
+
+      <div class="flow-card">
+        <span class="number">5</span>
+        <strong>和了</strong>
+        <p>
+          通常の点棒計算に加え、チップ・倍率を確認します。
+          立直をしている場合は裏ドラも確認します。
+        </p>
+      </div>
+
+      <div class="flow-card">
+        <span class="number">6</span>
+        <strong>満塁／ホームラン</strong>
+        <p>
+          点棒清算後に各プレイヤーの状態を更新します。
+        </p>
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>立直時の確認事項</strong>
+      <ul>
+        <li>通常立直：メンゼン1役・鳴き0役</li>
+        <li>オープン立直：メンゼン2役・鳴き1役</li>
+        <li>鳴き立直でも裏ドラを確認可能</li>
+        <li>立直一発はチップ倍率の対象</li>
+      </ul>
+    </div>
+
+    <div class="notice">
+      <strong>終局</strong>
+      <p>
+        誰かがトブまでゲームを継続します。
+        終局時に残っている供託はトップ取りです。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== 13. 重要ポイント ==================== -->
+
+  <section id="summary">
+    <h2>13. 重要ポイント早見表</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>ルール</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>人数</strong></td>
+            <td>三人麻雀</td>
+          </tr>
+
+          <tr>
+            <td><strong>牌</strong></td>
+            <td>108枚</td>
+          </tr>
+
+          <tr>
+            <td><strong>赤ドラ</strong></td>
+            <td>赤5p・赤5s 各1枚、ドラ1</td>
+          </tr>
+
+          <tr>
+            <td><strong>場</strong></td>
+            <td>永久東場</td>
+          </tr>
+
+          <tr>
+            <td><strong>親</strong></td>
+            <td>和了者が次局の親。ダブロン時は上家</td>
+          </tr>
+
+          <tr>
+            <td><strong>持ち点</strong></td>
+            <td>20,000点持ち・20,000点返し</td>
+          </tr>
+
+          <tr>
+            <td><strong>終局</strong></td>
+            <td>誰かがトブまで</td>
+          </tr>
+
+          <tr>
+            <td><strong>0点</strong></td>
+            <td>継続</td>
+          </tr>
+
+          <tr>
+            <td><strong>立直</strong></td>
+            <td>1,000点未満では不可</td>
+          </tr>
+
+          <tr>
+            <td><strong>通常立直</strong></td>
+            <td>メンゼン1役・鳴き0役</td>
+          </tr>
+
+          <tr>
+            <td><strong>オープン立直</strong></td>
+            <td>メンゼン2役・鳴き1役</td>
+          </tr>
+
+          <tr>
+            <td><strong>鳴き立直の裏ドラ</strong></td>
+            <td>確認可能</td>
+          </tr>
+
+          <tr>
+            <td><strong>少牌マイティー</strong></td>
+            <td>あり。常に1枚不足＋不足分はオールマイティ</td>
+          </tr>
+
+          <tr>
+            <td><strong>喰いタン</strong></td>
+            <td>あり</td>
+          </tr>
+
+          <tr>
+            <td><strong>後付け</strong></td>
+            <td>あり</td>
+          </tr>
+
+          <tr>
+            <td><strong>フリテン立直</strong></td>
+            <td>あり</td>
+          </tr>
+
+          <tr>
+            <td><strong>ダブロン</strong></td>
+            <td>あり。供託は上家取り</td>
+          </tr>
+
+          <tr>
+            <td><strong>九種九牌</strong></td>
+            <td>あり。親継続＋修羅場進行</td>
+          </tr>
+
+          <tr>
+            <td><strong>四槓子散了</strong></td>
+            <td>あり</td>
+          </tr>
+
+          <tr>
+            <td><strong>暗カンのドラ</strong></td>
+            <td>即乗り</td>
+          </tr>
+
+          <tr>
+            <td><strong>明カンのドラ</strong></td>
+            <td>後乗り</td>
+          </tr>
+
+          <tr>
+            <td><strong>パオ</strong></td>
+            <td>大三元・四槓子・大四喜</td>
+          </tr>
+
+          <tr>
+            <td><strong>国士暗カンロン</strong></td>
+            <td>あり</td>
+          </tr>
+
+          <tr>
+            <td><strong>修羅場</strong></td>
+            <td>親が変わってもリセットせず累積</td>
+          </tr>
+
+          <tr>
+            <td><strong>満塁ホームラン</strong></td>
+            <td>あり。状態は局清算後に更新</td>
+          </tr>
+
+          <tr>
+            <td><strong>抜き牌</strong></td>
+            <td>1m・9m・北。すべてドラ1</td>
+          </tr>
+
+          <tr>
+            <td><strong>抜き牌後のツモ</strong></td>
+            <td>嶺上開花</td>
+          </tr>
+
+          <tr>
+            <td><strong>チップ</strong></td>
+            <td>1枚＝1pt</td>
+          </tr>
+
+          <tr>
+            <td><strong>順位点</strong></td>
+            <td>1着 +10pt / 2着 ±0pt / 3着 -10pt</td>
+          </tr>
+
+          <tr>
+            <td><strong>役満祝儀</strong></td>
+            <td>1役満につき100pt</td>
+          </tr>
+
+          <tr>
+            <td><strong>チップ倍率</strong></td>
+            <td>条件加算式、最大8倍</td>
+          </tr>
+
+          <tr>
+            <td><strong>チョンボ</strong></td>
+            <td>基本フリテン扱い</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="important">
+      <strong>⚠️ 実戦で特に注意する5点</strong>
+
+      <ol>
+        <li>
+          <strong>常に1枚少ない</strong>ため、手牌枚数を通常の三麻と混同しない。
+        </li>
+        <li>
+          <strong>立直はメンゼン1役・鳴き0役、オープン立直はメンゼン2役・鳴き1役。</strong>
+        </li>
+        <li>
+          <strong>鳴き立直でも裏ドラを確認できる。</strong>
+        </li>
+        <li>
+          <strong>修羅場は親が変わってもリセットされない。</strong>
+        </li>
+        <li>
+          <strong>満塁／ホームラン状態は局の清算後に更新する。</strong>
+        </li>
+      </ol>
+    </div>
+
+  </section>
+
+
+  <footer>
+    ぶっトビウオ 特殊麻雀ルールブック
+  </footer>
+
+</div>
+
+</body>
+</html>
